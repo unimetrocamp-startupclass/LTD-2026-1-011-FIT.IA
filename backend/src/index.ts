@@ -2,7 +2,7 @@ import "dotenv/config";
 
 import fastifyCors from "@fastify/cors";
 import fastifySwagger from "@fastify/swagger";
-import fastifySwaggerUI from "@fastify/swagger-ui";
+import fastifyApiReference from "@scalar/fastify-api-reference";
 import Fastify from "fastify";
 import {
   jsonSchemaTransform,
@@ -42,7 +42,9 @@ await app.register(fastifySwagger, {
 
 ## Configuração inicial
 
-**Arquivo \`.env\`:** Crie um arquivo \`.env\` na raiz do projeto com as variáveis necessárias (veja a seção "Variáveis de ambiente" ao final).
+**Arquivo \`.env\`:** Crie \`backend/.env\` (na pasta \`backend/\`, raiz do pacote Node) com as variáveis necessárias (veja a seção "Variáveis de ambiente" ao final).
+
+> **Importante:** Comandos \`pnpm\` e \`docker compose\` abaixo assumem o diretório \`backend/\` como pasta atual, **ou** uso do ficheiro compose a partir da raiz do repositório (exemplos abaixo).
 
 ---
 
@@ -54,9 +56,20 @@ await app.register(fastifySwagger, {
 
 ### 1.1 Iniciar
 
+**Opção A — a partir da pasta \`backend/\`:**
+
 \`\`\`bash
+cd backend
 docker compose up -d
 \`\`\`
+
+**Opção B — a partir da raiz do repositório Git:**
+
+\`\`\`bash
+docker compose -f backend/docker-compose.yml up -d
+\`\`\`
+
+> **Seções 1.2 a 1.6:** se estiver na **raiz do repositório** (sem \`cd backend\`), prefixe os comandos com \`docker compose -f backend/docker-compose.yml\` em vez de \`docker compose\` apenas.
 
 ### 1.2 Migrations e mudanças no Prisma
 
@@ -84,6 +97,7 @@ docker compose down
 | Tipo de mudança | Comando | Observação |
 |-----------------|---------|------------|
 | Apenas código (\`.ts\`) | \`docker compose restart app\` | \`tsx --watch\` recarrega automaticamente; use restart se não recarregar |
+| Copiar código para container sem rebuild | Em \`backend/\`: \`docker compose cp .\\src app:/app/src\`. Na raiz do repo: \`docker compose -f backend/docker-compose.yml cp .\\backend\\src app:/app/src\` | Atualiza os arquivos no container em execução; se não houver recarga automática, rode \`docker compose restart app\` (adicione \`-f backend/docker-compose.yml\` se estiver na raiz) |
 | Dockerfile ou dependências | \`docker compose up -d --build\` | Reconstrói a imagem |
 
 ### 1.5 Novas dependências
@@ -117,12 +131,13 @@ O container mantém seu próprio \`node_modules\`. Ao adicionar pacotes:
 
 Escolha uma opção:
 
-- **Opção A (Docker só para Postgres):** \`docker compose up -d postgres\` — usa porta 5433
+- **Opção A (Docker só para Postgres):** em \`backend/\`: \`docker compose up -d postgres\`. Na raiz do repo: \`docker compose -f backend/docker-compose.yml up -d postgres\` — usa porta 5433
 - **Opção B (PostgreSQL nativo):** Instale o PostgreSQL e ajuste a \`DATABASE_URL\` no \`.env\`
 
 ### 2.2 Setup
 
 \`\`\`bash
+cd backend
 pnpm install
 pnpm exec prisma generate
 pnpm exec prisma migrate dev
@@ -145,6 +160,7 @@ pnpm exec prisma migrate dev
 ### 2.4 Iniciar
 
 \`\`\`bash
+cd backend
 pnpm run dev
 \`\`\`
 
@@ -152,7 +168,7 @@ pnpm run dev
 
 ## 3. Variáveis de ambiente
 
-Crie o arquivo \`.env\` na raiz do projeto:
+Crie o arquivo \`.env\` em \`backend/.env\`:
 
 | Variável              | Descrição                | Padrão    | Obrigatória |
 |-----------------------|--------------------------|-----------|-------------|
@@ -180,9 +196,33 @@ await app.register(fastifyCors, {
   credentials: true,
 });
 
-//Rota Documentação
-await app.register(fastifySwaggerUI, {
+await app.register(fastifyApiReference, {
   routePrefix: "/docs",
+  configuration: {
+    sources: [
+      {
+        title: "Fit.IA API",
+        slug: "fit-ia-api",
+        url: "/swagger.json",
+      },
+      {
+        title: "Auth API",
+        slug: "auth-api",
+        url: "/api/auth/open-api/generate-schema",
+      },
+    ],
+  },
+});
+
+app.withTypeProvider<ZodTypeProvider>().route({
+  method: "GET",
+  url: "/swagger.json",
+  schema: {
+    hide: true,
+  },
+  handler: async () => {
+    return app.swagger();
+  },
 });
 
 app.withTypeProvider<ZodTypeProvider>().route({
