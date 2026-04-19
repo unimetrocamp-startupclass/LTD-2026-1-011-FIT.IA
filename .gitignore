@@ -6,3 +6,4 @@ backend/.env
 backend/.env.*
 backend/.pnpm-store/
 backend/src/generated/prisma/
+backend/dist/
