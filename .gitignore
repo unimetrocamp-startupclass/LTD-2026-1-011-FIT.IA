@@ -1,5 +1,7 @@
 .DS_Store
 
+.vscode/
+
 # Backend Node / ambiente
 backend/node_modules/
 backend/.env

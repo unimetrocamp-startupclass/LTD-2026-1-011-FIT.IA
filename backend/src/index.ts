@@ -96,7 +96,6 @@ docker compose down
 
 | Tipo de mudança | Comando | Observação |
 |-----------------|---------|------------|
-| Apenas código (\`.ts\`) | \`docker compose restart app\` | \`tsx --watch\` recarrega automaticamente; use restart se não recarregar |
 | Copiar código para container sem rebuild | Em \`backend/\`: \`docker compose cp .\\src app:/app/src\`. Na raiz do repo: \`docker compose -f backend/docker-compose.yml cp .\\backend\\src app:/app/src\` | Atualiza os arquivos no container em execução; se não houver recarga automática, rode \`docker compose restart app\` (adicione \`-f backend/docker-compose.yml\` se estiver na raiz) |
 | Dockerfile ou dependências | \`docker compose up -d --build\` | Reconstrói a imagem |
 
