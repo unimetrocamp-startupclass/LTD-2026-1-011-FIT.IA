@@ -17,8 +17,8 @@ model User {
   id           String        @id @default(uuid())
   workoutPlans WorkoutPlan[]
 
-  createdAt     DateTime  @default(now())
-  updateAt      DateTime  @updatedAt
+  createdAt     DateTime  @default(now()) @db.Timestamptz()
+  updateAt      DateTime  @updatedAt @db.Timestamptz()
   name          String
   email         String
   emailVerified Boolean   @default(false)
@@ -35,12 +35,12 @@ model WorkoutPlan {
   id          String       @id @default(uuid())
   name        String
   userId      String
-  user        User         @relation(fields: [userId], references: [id])
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
   isActive    Boolean      @default(true)
   workoutDays WorkoutDay[]
 
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  createdAt DateTime @default(now()) @db.Timestamptz()
+  updateAt  DateTime @updatedAt @db.Timestamptz()
 }
 
 enum WeekDay {
@@ -57,14 +57,15 @@ model WorkoutDay {
   id                         String            @id @default(uuid())
   name                       String
   workoutPlanId              String
-  workoutPlan                WorkoutPlan       @relation(fields: [workoutPlanId], references: [id])
+  workoutPlan                WorkoutPlan       @relation(fields: [workoutPlanId], references: [id], onDelete: Cascade)
   isRest                     Boolean           @default(false)
   weekDay                    WeekDay
   exercises                  WorkoutExercise[]
+  sessions                   WorkoutSession[]
   estimatedDurationInSeconds Int
 
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  createdAt DateTime @default(now()) @db.Timestamptz()
+  updateAt  DateTime @updatedAt @db.Timestamptz()
 }
 
 model WorkoutExercise {
@@ -72,13 +73,24 @@ model WorkoutExercise {
   name              String
   order             Int
   workoutDayId      String
-  workoutDay        WorkoutDay @relation(fields: [workoutDayId], references: [id])
+  workoutDay        WorkoutDay @relation(fields: [workoutDayId], references: [id], onDelete: Cascade)
   sets              Int
   reps              Int
   restTimeInSeconds Int
 
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  createdAt DateTime @default(now()) @db.Timestamptz()
+  updateAt  DateTime @updatedAt @db.Timestamptz()
+}
+
+model WorkoutSession {
+  id           String     @id @default(uuid())
+  workoutDayId String
+  workoutDay   WorkoutDay @relation(fields: [workoutDayId], references: [id], onDelete: Cascade)
+  startedAt    DateTime   @db.Timestamptz()
+  completedAt  DateTime?  @db.Timestamptz()
+
+  createdAt DateTime @default(now()) @db.Timestamptz()
+  updateAt  DateTime @updatedAt @db.Timestamptz()
 }
 
 model Session {
