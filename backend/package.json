@@ -14,7 +14,11 @@
   "license": "ISC",
   "packageManager": "pnpm@10.32.1",
   "pnpm": {
-    "onlyBuiltDependencies": ["@prisma/engines", "prisma", "esbuild"]
+    "onlyBuiltDependencies": [
+      "@prisma/engines",
+      "prisma",
+      "esbuild"
+    ]
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -32,7 +36,6 @@
   "dependencies": {
     "@fastify/cors": "11.2.0",
     "@fastify/swagger": "9.7.0",
-    "@fastify/swagger-ui": "5.2.5",
     "@prisma/adapter-pg": "7.4.0",
     "@prisma/client": "7.4.0",
     "@scalar/fastify-api-reference": "1.44.20",
