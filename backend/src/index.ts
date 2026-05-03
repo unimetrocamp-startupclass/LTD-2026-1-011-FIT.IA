@@ -13,7 +13,7 @@ import {
 import z from "zod";
 
 import { auth } from "./lib/auth.js";
-import workoutPlanRoutes from "./routes/workout-plan.js";
+import { workoutPlanRoutes } from "./routes/workout-plan.js";
 
 const buildApiDescription =
   () => `API backend do Fit.IA (Fastify + Prisma + Better Auth).

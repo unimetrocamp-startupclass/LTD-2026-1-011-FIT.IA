@@ -9,6 +9,7 @@ interface InputDto {
     name: string;
     weekDay: WeekDay;
     isRest: boolean;
+    coverImageUrl?: string | null;
     estimatedDurationInSeconds: number;
     exercises: Array<{
       name: string;
@@ -23,24 +24,17 @@ interface InputDto {
 interface OutputDto {
   id: string;
   name: string;
-  userId: string;
-  isActive: boolean;
-  createdAt: Date;
-  updateAt: Date;
   workoutDays: Array<{
-    id: string;
     name: string;
-    workoutPlanId: string;
-    isRest: boolean;
     weekDay: WeekDay;
+    isRest: boolean;
+    coverImageUrl: string | null;
     estimatedDurationInSeconds: number;
     exercises: Array<{
-      id: string;
       name: string;
-      order: number;
-      workoutDayId: string;
       sets: number;
       reps: number;
+      order: number;
       restTimeInSeconds: number;
     }>;
   }>;
@@ -73,6 +67,7 @@ export class CreateWorkoutPlan {
               name: workoutDay.name,
               weekDay: workoutDay.weekDay,
               isRest: workoutDay.isRest,
+              coverImageUrl: workoutDay.coverImageUrl ?? null,
               estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
               exercises: {
                 create: workoutDay.exercises.map((exercise) => ({
@@ -104,7 +99,24 @@ export class CreateWorkoutPlan {
         throw new NotFoundError("Workout plan not found");
       }
 
-      return result;
+      return {
+        id: result.id,
+        name: result.name,
+        workoutDays: result.workoutDays.map((workoutDay) => ({
+          name: workoutDay.name,
+          weekDay: workoutDay.weekDay,
+          isRest: workoutDay.isRest,
+          coverImageUrl: workoutDay.coverImageUrl,
+          estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
+          exercises: workoutDay.exercises.map((exercise) => ({
+            name: exercise.name,
+            sets: exercise.sets,
+            reps: exercise.reps,
+            order: exercise.order,
+            restTimeInSeconds: exercise.restTimeInSeconds,
+          })),
+        })),
+      };
     });
   }
 }

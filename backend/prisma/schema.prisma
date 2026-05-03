@@ -63,6 +63,7 @@ model WorkoutDay {
   exercises                  WorkoutExercise[]
   sessions                   WorkoutSession[]
   estimatedDurationInSeconds Int
+  coverImageUrl              String?
 
   createdAt DateTime @default(now()) @db.Timestamptz()
   updateAt  DateTime @updatedAt @db.Timestamptz()

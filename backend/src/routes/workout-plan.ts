@@ -35,13 +35,13 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
 
         const createWorkoutPlan = new CreateWorkoutPlan();
 
-        const result = await createWorkoutPlan.execute({
+        const workoutPlan = await createWorkoutPlan.execute({
           userId: session.user.id,
           name: request.body.name,
           workoutDays: request.body.workoutDays,
         });
 
-        return reply.status(201).send(result);
+        return reply.status(201).send(workoutPlan);
       } catch (error) {
         app.log.error(error);
         if (error instanceof NotFoundError) {
@@ -58,5 +58,3 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
     },
   });
 };
-
-export default workoutPlanRoutes;
