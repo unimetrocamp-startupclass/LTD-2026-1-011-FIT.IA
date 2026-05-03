@@ -9,6 +9,7 @@
 
 - Sempre validar se existe stack ativa antes de subir uma nova (`docker compose ps`).
 - Sempre usar `docker compose` (na pasta `backend/`) para comandos de ciclo de vida.
+- Sempre que houver atualizacao de codigo, lembrar de colocar as alteracoes no container Docker antes de finalizar a tarefa.
 - Nunca assumir que o banco local esta ativo fora do Compose.
 - Quando alterar `prisma/schema.prisma` ou migrations, executar no container:
   - `docker compose exec app pnpm exec prisma generate`
