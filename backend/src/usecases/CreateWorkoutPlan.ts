@@ -28,7 +28,7 @@ interface OutputDto {
     name: string;
     weekDay: WeekDay;
     isRest: boolean;
-    coverImageUrl: string | null;
+    coverImageUrl?: string;
     estimatedDurationInSeconds: number;
     exercises: Array<{
       name: string;
@@ -67,7 +67,7 @@ export class CreateWorkoutPlan {
               name: workoutDay.name,
               weekDay: workoutDay.weekDay,
               isRest: workoutDay.isRest,
-              coverImageUrl: workoutDay.coverImageUrl ?? null,
+              coverImageUrl: workoutDay.coverImageUrl ?? undefined,
               estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
               exercises: {
                 create: workoutDay.exercises.map((exercise) => ({
@@ -83,7 +83,7 @@ export class CreateWorkoutPlan {
         },
       });
 
-      const result: OutputDto | null = await tx.workoutPlan.findUnique({
+      const result = await tx.workoutPlan.findUnique({
         where: {
           id: workoutPlan.id,
         },
@@ -106,7 +106,7 @@ export class CreateWorkoutPlan {
           name: workoutDay.name,
           weekDay: workoutDay.weekDay,
           isRest: workoutDay.isRest,
-          coverImageUrl: workoutDay.coverImageUrl,
+          coverImageUrl: workoutDay.coverImageUrl ?? undefined,
           estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
           exercises: workoutDay.exercises.map((exercise) => ({
             name: exercise.name,
