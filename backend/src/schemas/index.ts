@@ -1,6 +1,18 @@
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat.js";
+import utc from "dayjs/plugin/utc.js";
 import z from "zod";
 
 import { WeekDay } from "../generated/prisma/enums.js";
+
+dayjs.extend(customParseFormat);
+dayjs.extend(utc);
+
+const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+const dateSchema = z
+  .string()
+  .regex(dateRegex)
+  .refine((date) => dayjs.utc(date, "YYYY-MM-DD", true).isValid());
 
 export const ErrorSchema = z.object({
   error: z.string(),
@@ -53,4 +65,30 @@ export const UpdateWorkoutSessionResponseSchema = z.object({
   id: z.uuid(),
   completedAt: z.iso.datetime(),
   startedAt: z.iso.datetime(),
+});
+
+export const HomeParamsSchema = z.object({
+  date: dateSchema,
+});
+
+export const HomeResponseSchema = z.object({
+  activeWorkoutPlanId: z.uuid(),
+  todayWorkoutDay: z.object({
+    workoutPlanId: z.uuid(),
+    id: z.uuid(),
+    name: z.string(),
+    isRest: z.boolean(),
+    weekDay: z.enum(WeekDay),
+    estimatedDurationInSeconds: z.number(),
+    coverImageUrl: z.url().optional(),
+    exercisesCount: z.number(),
+  }),
+  workoutStreak: z.number(),
+  consistencyByDay: z.record(
+    dateSchema,
+    z.object({
+      workoutDayCompleted: z.boolean(),
+      workoutDayStarted: z.boolean(),
+    }),
+  ),
 });

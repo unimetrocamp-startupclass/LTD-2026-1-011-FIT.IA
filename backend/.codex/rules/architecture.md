@@ -7,6 +7,7 @@
 - **SEMPRE** defina `tags` e `summary` dentro do `schema` da rota para documentar a API.
 - **SEMPRE** crie os schemas das operações de criação e atualização dentro de @src/schemas/index.ts.
 - **SEMPRE** use o @src/schemas/index.ts para tipar respostas de erro.
+- Sempre que usar o enum `WeekDay` em schemas Zod, importe `WeekDay` do Prisma (`@src/generated/prisma/enums.js`) e valide com `z.enum(WeekDay)`.
 - Uma rota **NUNCA** deve conter regras de negócio, apenas validações de dados (com o Zod) e de autenticação (se necessário).
 - Quando uma rota precisar ser protegida (acessível apenas por usuários autenticados), **SEMPRE** use o `auth.api.getSession` (@src/lib/auth.ts) para recuperar a sessão do usuário.
 - Uma rota deve **SEMPRE** instanciar e chamar um use case.
