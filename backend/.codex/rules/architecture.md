@@ -12,6 +12,15 @@
 - Uma rota deve **SEMPRE** instanciar e chamar um use case.
 - **SEMPRE** trate os erros lançados pelo use case.
 
+## Validações: rota × use case
+
+Há duas camadas obrigatórias; omitir uma delas deixa falhas ou inconsistências sem cobertura.
+
+1. **Rota (@src/routes)** — validação **estrutural e de formato** com Zod (tipos do body/params/query, UUIDs, `z.iso.datetime()`, limites numéricos, strings não vazias, etc.). A rota **não** implementa regras de domínio.
+2. **Use case (@src/usecases)** — **regras de negócio** que dependem de estado no banco ou de relacionamentos: recurso existe e pertence ao usuário, plano ativo, transições de estado (por exemplo sessão já concluída), **ordem temporal** (`completedAt` não antes de `startedAt`), unicidade já refletida no modelo, etc. Quando falhar, lance sempre um erro customizado definido em @src/erros/index.ts (crie classes novas quando necessário) e **mapeie** esse erro para o status HTTP correto na rota (400 vs 409 vs 404, etc.). O objeto `schema.response` da rota deve declarar todos os status de erro relevantes (`400`, `404`, `409`, …).
+
+O use case deve permanecer defensivo mesmo quando a rota valida formato: outros chamadores futuros ou testes podem invocá-lo diretamente.
+
 ### Exemplo:
 
 ```ts
@@ -19,7 +28,7 @@ import { fromNodeHeaders } from "better-auth/node";
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 
-import { NotFoundError } from "../errors/index.js";
+import { NotFoundError } from "../erros/index.js";
 import { auth } from "../lib/auth.js";
 import { ErrorSchema, WorkoutPlanSchema } from "../schemas/index.js";
 import { CreateWorkoutPlan } from "../usecases/CreateWorkoutPlan.js";
@@ -85,13 +94,13 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
 - Quando um use case receber um parâmetro, ele deve **SEMPRE** ser um DTO (`InputDto`), que é uma interface definida no mesmo arquivo.
 - O retorno de um use case deve **SEMPRE** ser tipado com uma interface `OutputDto`, definida no mesmo arquivo. O use case deve mapear o resultado do banco para o `OutputDto`, **NUNCA** retornando o model do Prisma diretamente. Isso garante desacoplamento entre a camada de negócio e o banco de dados.
 - Ao precisar interagir com o banco de dados, um use case deve **SEMPRE** chamar o Prisma diretamente, e não um repository.
-- **NUNCA** lide com erros nos use cases. Quem lida com os erros (com try, catch) é sempre a rota @src/routes.
-- Caso um use case lance uma exceção, deve ser **SEMPRE** lançado um erro customizado. Esses erros ficam em @src/errors/index.ts. Caso um erro necessário não exista, crie-o.
+- Nos use cases **NUNCA** use `try`/`catch` para converter falhas HTTP ou engolir exceções. Quem trata erro no sentido HTTP (bloco `try`/`catch` no handler e `reply.status`) é **sempre** a rota @src/routes. Os use cases **devem** lançar erros customizados quando uma regra de negócio falha.
+- Caso um use case lance uma exceção por falha de negócio, deve ser **SEMPRE** um erro customizado. Essas classes ficam em @src/erros/index.ts. Caso um erro necessário não exista, crie-o na mesma pasta e exporte-o no `index`.
 
 ### Exemplo:
 
 ```ts
-import { NotFoundError } from "../errors/index.js";
+import { NotFoundError } from "../erros/index.js";
 import { WeekDay } from "../generated/prisma/enums.js";
 import { prisma } from "../lib/db.js";
 
