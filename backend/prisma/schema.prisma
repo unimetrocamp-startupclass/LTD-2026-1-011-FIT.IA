@@ -85,7 +85,7 @@ model WorkoutExercise {
 
 model WorkoutSession {
   id           String     @id @default(uuid())
-  workoutDayId String
+  workoutDayId String     @unique
   workoutDay   WorkoutDay @relation(fields: [workoutDayId], references: [id], onDelete: Cascade)
   startedAt    DateTime   @db.Timestamptz()
   completedAt  DateTime?  @db.Timestamptz()

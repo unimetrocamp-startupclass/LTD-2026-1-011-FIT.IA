@@ -4,6 +4,7 @@
 - **SEMPRE** crie os arquivos das rotas em @src/routes.
 - **SEMPRE** use `fastify-type-provider-zod` para definir os schemas de request e response de uma rota.
 - **SEMPRE** use Zod v4, **NUNCA** use o Zod v3.
+- **SEMPRE** defina `tags` e `summary` dentro do `schema` da rota para documentar a API.
 - **SEMPRE** crie os schemas das operações de criação e atualização dentro de @src/schemas/index.ts.
 - **SEMPRE** use o @src/schemas/index.ts para tipar respostas de erro.
 - Uma rota **NUNCA** deve conter regras de negócio, apenas validações de dados (com o Zod) e de autenticação (se necessário).
@@ -28,6 +29,8 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
     method: "POST",
     url: "/",
     schema: {
+      tags: ["Workout Plan"],
+      summary: "Create a workout plan",
       body: WorkoutPlanSchema.omit({ id: true }),
       response: {
         201: WorkoutPlanSchema,
