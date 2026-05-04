@@ -2,7 +2,7 @@
 source_file: "src/index.ts"
 type: "code"
 community: "Community 2"
-location: "L205"
+location: "L207"
 tags:
   - graphify/code
   - graphify/EXTRACTED

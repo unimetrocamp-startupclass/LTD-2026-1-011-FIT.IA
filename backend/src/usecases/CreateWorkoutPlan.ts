@@ -40,15 +40,29 @@ interface OutputDto {
   }>;
 }
 
+const weekDayOrder: Record<WeekDay, number> = {
+  [WeekDay.MONDAY]: 1,
+  [WeekDay.TUESDAY]: 2,
+  [WeekDay.WEDNESDAY]: 3,
+  [WeekDay.THURSDAY]: 4,
+  [WeekDay.FRIDAY]: 5,
+  [WeekDay.SATURDAY]: 6,
+  [WeekDay.SUNDAY]: 7,
+};
+
 export class CreateWorkoutPlan {
   async execute(dto: InputDto): Promise<OutputDto> {
-    const existingWorkoutPlan = await prisma.workoutPlan.findFirst({
-      where: {
-        isActive: true,
-      },
-    });
-
     return prisma.$transaction(async (tx) => {
+      const existingWorkoutPlan = await tx.workoutPlan.findFirst({
+        where: {
+          userId: dto.userId,
+          isActive: true,
+        },
+        select: {
+          id: true,
+        },
+      });
+
       if (existingWorkoutPlan) {
         await tx.workoutPlan.update({
           where: { id: existingWorkoutPlan.id },
@@ -87,10 +101,28 @@ export class CreateWorkoutPlan {
         where: {
           id: workoutPlan.id,
         },
-        include: {
+        select: {
+          id: true,
+          name: true,
           workoutDays: {
-            include: {
-              exercises: true,
+            select: {
+              name: true,
+              weekDay: true,
+              isRest: true,
+              coverImageUrl: true,
+              estimatedDurationInSeconds: true,
+              exercises: {
+                orderBy: {
+                  order: "asc",
+                },
+                select: {
+                  name: true,
+                  sets: true,
+                  reps: true,
+                  order: true,
+                  restTimeInSeconds: true,
+                },
+              },
             },
           },
         },
@@ -102,20 +134,26 @@ export class CreateWorkoutPlan {
       return {
         id: result.id,
         name: result.name,
-        workoutDays: result.workoutDays.map((workoutDay) => ({
-          name: workoutDay.name,
-          weekDay: workoutDay.weekDay,
-          isRest: workoutDay.isRest,
-          coverImageUrl: workoutDay.coverImageUrl ?? undefined,
-          estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
-          exercises: workoutDay.exercises.map((exercise) => ({
-            name: exercise.name,
-            sets: exercise.sets,
-            reps: exercise.reps,
-            order: exercise.order,
-            restTimeInSeconds: exercise.restTimeInSeconds,
+        workoutDays: result.workoutDays
+          .toSorted(
+            (leftWorkoutDay, rightWorkoutDay) =>
+              weekDayOrder[leftWorkoutDay.weekDay] -
+              weekDayOrder[rightWorkoutDay.weekDay],
+          )
+          .map((workoutDay) => ({
+            name: workoutDay.name,
+            weekDay: workoutDay.weekDay,
+            isRest: workoutDay.isRest,
+            coverImageUrl: workoutDay.coverImageUrl ?? undefined,
+            estimatedDurationInSeconds: workoutDay.estimatedDurationInSeconds,
+            exercises: workoutDay.exercises.map((exercise) => ({
+              name: exercise.name,
+              sets: exercise.sets,
+              reps: exercise.reps,
+              order: exercise.order,
+              restTimeInSeconds: exercise.restTimeInSeconds,
+            })),
           })),
-        })),
       };
     });
   }

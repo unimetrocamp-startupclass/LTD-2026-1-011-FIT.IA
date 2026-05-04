@@ -35,11 +35,11 @@
       "color": "#f59e0b"
     },
     {
-      "query": "path: backend/src/schemas/index.ts",
+      "query": "path: backend/src/schemas",
       "color": "#ec4899"
     },
     {
-      "query": "path: backend/src/erros/index.ts",
+      "query": "path: backend/src/erros",
       "color": "#ec4899"
     },
     {
@@ -97,10 +97,6 @@
     {
       "query": "path: backend",
       "color": "#84cc16"
-    },
-    {
-      "query": "path: FitIA",
-      "color": "#ff0000"
     }
   ],
   "useThemeColors": true,

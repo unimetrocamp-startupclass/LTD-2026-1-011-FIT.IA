@@ -1,11 +1,11 @@
 ---
 source_file: "task/01.md"
 type: "rationale"
-community: "Community 1"
+community: "Community 0"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/Community_0
 ---
 
 # Start Workout Session Route Task
@@ -20,4 +20,4 @@ tags:
 - [[WorkoutSessionAlreadyStartedError]] - `references` [EXTRACTED]
 - [[workoutPlanRoutes()]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_1
+#graphify/rationale #graphify/EXTRACTED #community/Community_0

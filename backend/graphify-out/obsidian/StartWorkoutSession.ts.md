@@ -1,12 +1,12 @@
 ---
 source_file: "src/usecases/StartWorkoutSession.ts"
 type: "code"
-community: "Community 6"
+community: "Community 1"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/Community_1
 ---
 
 # StartWorkoutSession.ts
@@ -21,4 +21,4 @@ tags:
 - [[index.ts_1]] - `imports_from` [EXTRACTED]
 - [[workout-plan.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/Community_1

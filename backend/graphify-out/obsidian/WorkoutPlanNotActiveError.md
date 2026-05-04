@@ -1,12 +1,12 @@
 ---
 source_file: "src/erros/index.ts"
 type: "code"
-community: "Community 6"
-location: "L8"
+community: "Community 1"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_6
+  - community/Community_1
 ---
 
 # WorkoutPlanNotActiveError
@@ -19,4 +19,4 @@ tags:
 - [[index.ts_1]] - `contains` [EXTRACTED]
 - [[workout-plan.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_6
+#graphify/code #graphify/EXTRACTED #community/Community_1

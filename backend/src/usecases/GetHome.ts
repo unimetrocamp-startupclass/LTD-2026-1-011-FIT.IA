@@ -58,9 +58,16 @@ export class GetHome {
         userId: dto.userId,
         isActive: true,
       },
-      include: {
+      select: {
+        id: true,
         workoutDays: {
-          include: {
+          select: {
+            id: true,
+            name: true,
+            isRest: true,
+            weekDay: true,
+            estimatedDurationInSeconds: true,
+            coverImageUrl: true,
             _count: {
               select: {
                 exercises: true,

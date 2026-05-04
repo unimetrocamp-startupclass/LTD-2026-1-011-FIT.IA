@@ -2,7 +2,7 @@
 source_file: "src/usecases/UpdateWorkoutSession.ts"
 type: "code"
 community: "Community 1"
-location: "L23"
+location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # UpdateWorkoutSession
 
 ## Connections
-- [[.execute()_4]] - `method` [EXTRACTED]
+- [[.execute()_6]] - `method` [EXTRACTED]
 - [[Update Workout Session Route Task]] - `references` [EXTRACTED]
 - [[UpdateWorkoutSession.ts]] - `contains` [EXTRACTED]
 - [[workout-plan.ts]] - `imports` [EXTRACTED]

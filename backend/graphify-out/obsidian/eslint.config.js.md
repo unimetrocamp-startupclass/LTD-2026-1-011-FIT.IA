@@ -1,14 +1,14 @@
 ---
 source_file: "eslint.config.js"
 type: "code"
-community: "Community 11"
+community: "Community 8"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_11
+  - community/Community_8
 ---
 
 # eslint.config.js
 
-#graphify/code #graphify/EXTRACTED #community/Community_11
+#graphify/code #graphify/EXTRACTED #community/Community_8

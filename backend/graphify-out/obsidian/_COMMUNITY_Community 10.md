@@ -1,17 +1,16 @@
 ---
 type: community
-cohesion: 1.00
-members: 2
+members: 3
 ---
 
 # Community 10
 
-**Cohesion:** 1.00 - tightly connected
-**Members:** 2 nodes
+**Members:** 3 nodes
 
 ## Members
-- [[browser.ts]] - code - src/generated/prisma/browser.ts
-- [[prismaNamespaceBrowser.ts]] - code - src/generated/prisma/internal/prismaNamespaceBrowser.ts
+- [[GRAPH_REPORT]] - document - AGENTS.md
+- [[Graphify Query Commands]] - document - AGENTS.md
+- [[Graphify Workflow]] - document - AGENTS.md
 
 ## Live Query (requires Dataview plugin)
 

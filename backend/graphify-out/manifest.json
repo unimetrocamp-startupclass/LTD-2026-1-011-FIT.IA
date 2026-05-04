@@ -24,12 +24,12 @@
     "hash": "1ba2f3d919c8e56084f3e02db552514e"
   },
   "C:\\Work\\FitIA\\backend\\src\\index.ts": {
-    "mtime": 1777843280.7273583,
-    "hash": "b3caee6fac5f31017866a257ffd05dfc"
+    "mtime": 1777912883.3614736,
+    "hash": "c93d612069f7b12bd60ed0c4f36eaf8c"
   },
   "C:\\Work\\FitIA\\backend\\src\\erros\\index.ts": {
-    "mtime": 1777840729.6570044,
-    "hash": "1757f47fdf5a1f5a8a92dedfcd291285"
+    "mtime": 1777916084.154622,
+    "hash": "da065ce989c1ae195ced7e374c18c69e"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\browser.ts": {
     "mtime": 1777897060.944913,
@@ -104,24 +104,32 @@
     "hash": "f0c679151f992ecc46245010671ebe0b"
   },
   "C:\\Work\\FitIA\\backend\\src\\routes\\home.ts": {
-    "mtime": 1777843248.373588,
-    "hash": "9a344c3e4ace4540e28abab97372fbac"
+    "mtime": 1777916084.196589,
+    "hash": "4649896476ece529124b2ab104be8c00"
+  },
+  "C:\\Work\\FitIA\\backend\\src\\routes\\stats.ts": {
+    "mtime": 1777913772.4723277,
+    "hash": "c00449e80fdb0d5e8ba33852bdcd2d5f"
   },
   "C:\\Work\\FitIA\\backend\\src\\routes\\workout-plan.ts": {
-    "mtime": 1777907858.258129,
-    "hash": "8b714e60250a43f1951b4b1db6660f97"
+    "mtime": 1777916084.2353384,
+    "hash": "79ee141c203a443b03016ed04320a80d"
   },
   "C:\\Work\\FitIA\\backend\\src\\schemas\\index.ts": {
-    "mtime": 1777907858.20946,
-    "hash": "bf627a18fd0a23f1ec53bc2804d5d263"
+    "mtime": 1777915743.0843115,
+    "hash": "2108f9ccbc2da8893db24d1874e13b23"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\CreateWorkoutPlan.ts": {
-    "mtime": 1777832891.8858287,
-    "hash": "b521356ad66c53d0f24131cd2e893865"
+    "mtime": 1777914960.5730865,
+    "hash": "9e3a1e12a6f79a9a016f902ba70a3f0c"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\GetHome.ts": {
-    "mtime": 1777843248.3499,
-    "hash": "e725e04a65f364d91f26ce174351a6b5"
+    "mtime": 1777915279.0758798,
+    "hash": "973596b1d28136762b4cdde4a82144f2"
+  },
+  "C:\\Work\\FitIA\\backend\\src\\usecases\\GetStats.ts": {
+    "mtime": 1777915279.1206884,
+    "hash": "acf425c94ea523f06aa242085b0bea53"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\GetWorkoutDay.ts": {
     "mtime": 1777910100.048797,
@@ -132,12 +140,12 @@
     "hash": "a6d55ee93ae04ba39ff07b74c3e79c42"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\StartWorkoutSession.ts": {
-    "mtime": 1777837828.9540968,
-    "hash": "fd524bbcd799d0815c71e42d4df75616"
+    "mtime": 1777914960.6206923,
+    "hash": "2bfc4b370df284452973eda7f9fd6623"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\UpdateWorkoutSession.ts": {
-    "mtime": 1777840730.6239994,
-    "hash": "d475771ca304773a7072f508c2e207b4"
+    "mtime": 1777914960.670863,
+    "hash": "b4846b0888f49e28b90bf110cb4519ea"
   },
   "C:\\Work\\FitIA\\backend\\AGENTS.md": {
     "mtime": 1777906262.6874273,
@@ -174,5 +182,9 @@
   "C:\\Work\\FitIA\\backend\\task\\05.md": {
     "mtime": 1777907662.783569,
     "hash": "9caf3bfa54f3c044b6f24d213042dc3e"
+  },
+  "C:\\Work\\FitIA\\backend\\task\\06.md": {
+    "mtime": 1777911817.9376812,
+    "hash": "d2f64d3229da578a1645ba3bb74879f8"
   }
 }

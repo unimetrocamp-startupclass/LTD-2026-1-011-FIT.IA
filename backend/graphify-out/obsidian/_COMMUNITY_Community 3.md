@@ -1,22 +1,24 @@
 ---
 type: community
-cohesion: 0.43
-members: 7
+members: 11
 ---
 
 # Community 3
 
-**Cohesion:** 0.43 - moderately connected
-**Members:** 7 nodes
+**Members:** 11 nodes
 
 ## Members
-- [[.constructor()_4]] - code - src/erros/index.ts
-- [[.constructor()_3]] - code - src/erros/index.ts
-- [[GetHome.ts]] - code - src/usecases/GetHome.ts
-- [[UpdateWorkoutSession.ts]] - code - src/usecases/UpdateWorkoutSession.ts
-- [[ValidationError]] - code - src/erros/index.ts
-- [[WorkoutSessionAlreadyCompletedError]] - code - src/erros/index.ts
-- [[index.ts_1]] - code - src/erros/index.ts
+- [[.execute()]] - code - src/usecases/CreateWorkoutPlan.ts
+- [[.execute()_3]] - code - src/usecases/GetWorkoutDay.ts
+- [[App Service]] - document - docker-compose.yml
+- [[CreateWorkoutPlan]] - code - src/usecases/CreateWorkoutPlan.ts
+- [[CreateWorkoutPlan.ts]] - code - src/usecases/CreateWorkoutPlan.ts
+- [[GetWorkoutDay]] - code - src/usecases/GetWorkoutDay.ts
+- [[GetWorkoutDay.ts]] - code - src/usecases/GetWorkoutDay.ts
+- [[Postgres Service]] - document - docker-compose.yml
+- [[db.ts]] - code - src/lib/db.ts
+- [[formatDate()]] - code - src/usecases/GetWorkoutDay.ts
+- [[prisma.config.ts]] - code - prisma.config.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -26,18 +28,13 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 5 edges to [[_COMMUNITY_Community 7]]
-- 4 edges to [[_COMMUNITY_Community 5]]
-- 4 edges to [[_COMMUNITY_Community 6]]
-- 3 edges to [[_COMMUNITY_Community 2]]
-- 2 edges to [[_COMMUNITY_Community 1]]
-- 2 edges to [[_COMMUNITY_Community 8]]
-- 1 edge to [[_COMMUNITY_Community 0]]
-- 1 edge to [[_COMMUNITY_Community 4]]
+- 9 edges to [[_COMMUNITY_Community 1]]
+- 5 edges to [[_COMMUNITY_Community 2]]
+- 3 edges to [[_COMMUNITY_Community 0]]
 
 ## Top bridge nodes
-- [[UpdateWorkoutSession.ts]] - degree 8, connects to 5 communities
-- [[GetHome.ts]] - degree 7, connects to 5 communities
-- [[index.ts_1]] - degree 12, connects to 4 communities
-- [[ValidationError]] - degree 6, connects to 2 communities
-- [[WorkoutSessionAlreadyCompletedError]] - degree 5, connects to 2 communities
+- [[db.ts]] - degree 10, connects to 3 communities
+- [[GetWorkoutDay.ts]] - degree 7, connects to 3 communities
+- [[CreateWorkoutPlan.ts]] - degree 6, connects to 3 communities
+- [[CreateWorkoutPlan]] - degree 3, connects to 1 community
+- [[GetWorkoutDay]] - degree 3, connects to 1 community

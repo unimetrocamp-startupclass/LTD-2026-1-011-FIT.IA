@@ -1,11 +1,11 @@
 ---
 source_file: "docker-compose.yml"
 type: "document"
-community: "Community 8"
+community: "Community 3"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/Community_3
 ---
 
 # Postgres Service
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[App Service]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Community_8
+#graphify/document #graphify/EXTRACTED #community/Community_3

@@ -1,12 +1,12 @@
 ---
 source_file: "src/routes/workout-plan.ts"
 type: "code"
-community: "Community 7"
+community: "Community 1"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/Community_1
 ---
 
 # workout-plan.ts
@@ -14,6 +14,8 @@ tags:
 ## Connections
 - [[CreateWorkoutPlan]] - `imports` [EXTRACTED]
 - [[CreateWorkoutPlan.ts]] - `imports_from` [EXTRACTED]
+- [[GetWorkoutDay]] - `imports` [EXTRACTED]
+- [[GetWorkoutDay.ts]] - `imports_from` [EXTRACTED]
 - [[GetWorkoutPlan]] - `imports` [EXTRACTED]
 - [[GetWorkoutPlan.ts]] - `imports_from` [EXTRACTED]
 - [[NotFoundError]] - `imports` [EXTRACTED]
@@ -31,4 +33,4 @@ tags:
 - [[index.ts_2]] - `imports_from` [EXTRACTED]
 - [[workoutPlanRoutes()]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/Community_1

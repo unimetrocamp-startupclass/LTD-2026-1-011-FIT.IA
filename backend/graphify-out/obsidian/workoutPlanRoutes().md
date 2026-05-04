@@ -1,12 +1,12 @@
 ---
 source_file: "src/routes/workout-plan.ts"
 type: "code"
-community: "Community 1"
-location: "L29"
+community: "Community 0"
+location: "L32"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/Community_0
 ---
 
 # workoutPlanRoutes()
@@ -18,4 +18,4 @@ tags:
 - [[index.ts]] - `imports` [EXTRACTED]
 - [[workout-plan.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_1
+#graphify/code #graphify/EXTRACTED #community/Community_0

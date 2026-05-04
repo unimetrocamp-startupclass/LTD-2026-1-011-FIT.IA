@@ -1,12 +1,12 @@
 ---
 source_file: "src/usecases/GetHome.ts"
 type: "code"
-community: "Community 3"
+community: "Community 2"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Community_2
 ---
 
 # GetHome.ts
@@ -20,4 +20,4 @@ tags:
 - [[home.ts]] - `imports_from` [EXTRACTED]
 - [[index.ts_1]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Community_2

@@ -1,12 +1,12 @@
 ---
 source_file: "src/erros/index.ts"
 type: "code"
-community: "Community 3"
-location: "L22"
+community: "Community 1"
+location: "L25"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Community_1
 ---
 
 # WorkoutSessionAlreadyCompletedError
@@ -18,4 +18,4 @@ tags:
 - [[index.ts_1]] - `contains` [EXTRACTED]
 - [[workout-plan.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Community_1

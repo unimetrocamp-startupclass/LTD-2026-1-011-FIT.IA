@@ -1,12 +1,12 @@
 ---
 source_file: "prisma.config.ts"
 type: "code"
-community: "Community 8"
+community: "Community 3"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_8
+  - community/Community_3
 ---
 
 # prisma.config.ts
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[App Service]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_8
+#graphify/code #graphify/EXTRACTED #community/Community_3

@@ -1,3 +1,6 @@
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
+
 import {
   NotFoundError,
   ValidationError,
@@ -5,6 +8,8 @@ import {
   WorkoutSessionAlreadyCompletedError,
 } from "../erros/index.js";
 import { prisma } from "../lib/db.js";
+
+dayjs.extend(utc);
 
 interface InputDto {
   userId: string;
@@ -22,12 +27,15 @@ interface OutputDto {
 
 export class UpdateWorkoutSession {
   async execute(dto: InputDto): Promise<OutputDto> {
-    const workoutPlan = await prisma.workoutPlan.findUnique({
-      where: { id: dto.workoutPlanId },
-      select: { userId: true, isActive: true },
+    const workoutPlan = await prisma.workoutPlan.findFirst({
+      where: {
+        id: dto.workoutPlanId,
+        userId: dto.userId,
+      },
+      select: { id: true, isActive: true },
     });
 
-    if (!workoutPlan || workoutPlan.userId !== dto.userId) {
+    if (!workoutPlan) {
       throw new NotFoundError("Workout plan not found");
     }
 
@@ -63,12 +71,12 @@ export class UpdateWorkoutSession {
       throw new WorkoutSessionAlreadyCompletedError();
     }
 
-    const completedAt = new Date(dto.completedAt);
-    if (Number.isNaN(completedAt.getTime())) {
+    const completedAt = dayjs.utc(dto.completedAt);
+    if (!completedAt.isValid()) {
       throw new ValidationError("Invalid completedAt datetime");
     }
 
-    if (completedAt.getTime() < workoutSession.startedAt.getTime()) {
+    if (completedAt.isBefore(dayjs.utc(workoutSession.startedAt))) {
       throw new ValidationError(
         "completedAt must be on or after session startedAt",
       );
@@ -76,7 +84,7 @@ export class UpdateWorkoutSession {
 
     const updatedWorkoutSession = await prisma.workoutSession.update({
       where: { id: workoutSession.id },
-      data: { completedAt },
+      data: { completedAt: completedAt.toDate() },
       select: {
         id: true,
         completedAt: true,
@@ -86,8 +94,8 @@ export class UpdateWorkoutSession {
 
     return {
       id: updatedWorkoutSession.id,
-      completedAt: updatedWorkoutSession.completedAt!.toISOString(),
-      startedAt: updatedWorkoutSession.startedAt.toISOString(),
+      completedAt: dayjs.utc(updatedWorkoutSession.completedAt).toISOString(),
+      startedAt: dayjs.utc(updatedWorkoutSession.startedAt).toISOString(),
     };
   }
 }

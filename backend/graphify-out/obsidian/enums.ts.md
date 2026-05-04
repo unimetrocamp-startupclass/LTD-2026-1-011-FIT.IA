@@ -15,6 +15,7 @@ tags:
 - [[Account.ts]] - `imports_from` [EXTRACTED]
 - [[CreateWorkoutPlan.ts]] - `imports_from` [EXTRACTED]
 - [[GetHome.ts]] - `imports_from` [EXTRACTED]
+- [[GetWorkoutDay.ts]] - `imports_from` [EXTRACTED]
 - [[GetWorkoutPlan.ts]] - `imports_from` [EXTRACTED]
 - [[Session.ts]] - `imports_from` [EXTRACTED]
 - [[User.ts]] - `imports_from` [EXTRACTED]

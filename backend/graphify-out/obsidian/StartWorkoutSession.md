@@ -2,7 +2,7 @@
 source_file: "src/usecases/StartWorkoutSession.ts"
 type: "code"
 community: "Community 1"
-location: "L19"
+location: "L23"
 tags:
   - graphify/code
   - graphify/EXTRACTED
@@ -12,7 +12,7 @@ tags:
 # StartWorkoutSession
 
 ## Connections
-- [[.execute()_3]] - `method` [EXTRACTED]
+- [[.execute()_5]] - `method` [EXTRACTED]
 - [[Start Workout Session API Requirement]] - `references` [EXTRACTED]
 - [[Start Workout Session Route Task]] - `references` [EXTRACTED]
 - [[StartWorkoutSession.ts]] - `contains` [EXTRACTED]

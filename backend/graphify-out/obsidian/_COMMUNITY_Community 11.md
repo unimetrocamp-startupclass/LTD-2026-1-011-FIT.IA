@@ -1,16 +1,16 @@
 ---
 type: community
-cohesion: 1.00
-members: 1
+members: 3
 ---
 
 # Community 11
 
-**Cohesion:** 1.00 - tightly connected
-**Members:** 1 nodes
+**Members:** 3 nodes
 
 ## Members
-- [[eslint.config.js]] - code - eslint.config.js
+- [[App Service]] - document - docker-compose.yml
+- [[Postgres Service]] - document - docker-compose.yml
+- [[prisma.config.ts]] - code - prisma.config.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -18,3 +18,9 @@ members: 1
 TABLE source_file, type FROM #community/Community_11
 SORT file.name ASC
 ```
+
+## Connections to other communities
+- 1 edge to [[_COMMUNITY_Community 8]]
+
+## Top bridge nodes
+- [[App Service]] - degree 3, connects to 1 community

@@ -1,22 +1,24 @@
 ---
 type: community
-cohesion: 0.22
-members: 15
+members: 20
 ---
 
 # Community 0
 
-**Cohesion:** 0.22 - loosely connected
-**Members:** 15 nodes
+**Members:** 20 nodes
 
 ## Members
 - [[Account.ts]] - code - src/generated/prisma/models/Account.ts
 - [[Session.ts]] - code - src/generated/prisma/models/Session.ts
+- [[Start Workout Session API Requirement]] - rationale - docs/API_PROMPT.md
+- [[Start Workout Session Route Task]] - rationale - task/01.md
 - [[User.ts]] - code - src/generated/prisma/models/User.ts
 - [[Verification.ts]] - code - src/generated/prisma/models/Verification.ts
+- [[Weekly Consistency in UTC]] - rationale - task/03.md
 - [[WorkoutDay.ts]] - code - src/generated/prisma/models/WorkoutDay.ts
 - [[WorkoutExercise.ts]] - code - src/generated/prisma/models/WorkoutExercise.ts
 - [[WorkoutPlan.ts]] - code - src/generated/prisma/models/WorkoutPlan.ts
+- [[WorkoutSession.ts]] - code - src/generated/prisma/models/WorkoutSession.ts
 - [[class.ts]] - code - src/generated/prisma/internal/class.ts
 - [[client.ts]] - code - src/generated/prisma/client.ts
 - [[commonInputTypes.ts]] - code - src/generated/prisma/commonInputTypes.ts
@@ -25,6 +27,7 @@ members: 15
 - [[getPrismaClientClass()]] - code - src/generated/prisma/internal/class.ts
 - [[models.ts]] - code - src/generated/prisma/models.ts
 - [[prismaNamespace.ts]] - code - src/generated/prisma/internal/prismaNamespace.ts
+- [[workoutPlanRoutes()]] - code - src/routes/workout-plan.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -34,17 +37,14 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 4 edges to [[_COMMUNITY_Community 1]]
-- 1 edge to [[_COMMUNITY_Community 8]]
-- 1 edge to [[_COMMUNITY_Community 6]]
-- 1 edge to [[_COMMUNITY_Community 2]]
-- 1 edge to [[_COMMUNITY_Community 7]]
-- 1 edge to [[_COMMUNITY_Community 3]]
-- 1 edge to [[_COMMUNITY_Community 5]]
+- 9 edges to [[_COMMUNITY_Community 1]]
+- 4 edges to [[_COMMUNITY_Community 2]]
+- 3 edges to [[_COMMUNITY_Community 3]]
+- 1 edge to [[_COMMUNITY_Community 4]]
 
 ## Top bridge nodes
-- [[enums.ts]] - degree 14, connects to 5 communities
+- [[enums.ts]] - degree 15, connects to 3 communities
+- [[WorkoutSession.ts]] - degree 7, connects to 2 communities
 - [[client.ts]] - degree 5, connects to 2 communities
-- [[prismaNamespace.ts]] - degree 12, connects to 1 community
-- [[WorkoutDay.ts]] - degree 3, connects to 1 community
-- [[WorkoutPlan.ts]] - degree 3, connects to 1 community
+- [[workoutPlanRoutes()]] - degree 5, connects to 2 communities
+- [[Start Workout Session Route Task]] - degree 8, connects to 1 community

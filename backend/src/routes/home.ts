@@ -35,7 +35,7 @@ export const homeRoutes = async (app: FastifyInstance) => {
         if (!session) {
           return reply.status(401).send({
             error: "Unauthorized",
-            code: "UNATHORIZED",
+            code: "UNAUTHORIZED",
           });
         }
 

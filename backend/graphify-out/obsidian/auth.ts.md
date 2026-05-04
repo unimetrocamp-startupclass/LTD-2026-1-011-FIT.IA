@@ -16,6 +16,7 @@ tags:
 - [[db.ts]] - `imports_from` [EXTRACTED]
 - [[home.ts]] - `imports_from` [EXTRACTED]
 - [[index.ts]] - `imports_from` [EXTRACTED]
+- [[stats.ts]] - `imports_from` [EXTRACTED]
 - [[workout-plan.ts]] - `imports_from` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/Community_2

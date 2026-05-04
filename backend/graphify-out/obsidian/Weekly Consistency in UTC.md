@@ -1,11 +1,11 @@
 ---
 source_file: "task/03.md"
 type: "rationale"
-community: "Community 4"
+community: "Community 0"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_4
+  - community/Community_0
 ---
 
 # Weekly Consistency in UTC
@@ -14,4 +14,4 @@ tags:
 - [[.buildConsistencyByDay()]] - `rationale_for` [EXTRACTED]
 - [[WorkoutSession.ts]] - `shares_data_with` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_4
+#graphify/rationale #graphify/EXTRACTED #community/Community_0

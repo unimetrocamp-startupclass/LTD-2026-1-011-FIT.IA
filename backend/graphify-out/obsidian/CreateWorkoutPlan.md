@@ -1,12 +1,12 @@
 ---
 source_file: "src/usecases/CreateWorkoutPlan.ts"
 type: "code"
-community: "Community 7"
-location: "L43"
+community: "Community 3"
+location: "L53"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/Community_3
 ---
 
 # CreateWorkoutPlan
@@ -16,4 +16,4 @@ tags:
 - [[CreateWorkoutPlan.ts]] - `contains` [EXTRACTED]
 - [[workout-plan.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/Community_3

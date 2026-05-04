@@ -17,6 +17,8 @@ tags:
 - [[handler()]] - `contains` [EXTRACTED]
 - [[home.ts]] - `imports_from` [EXTRACTED]
 - [[homeRoutes()]] - `imports` [EXTRACTED]
+- [[stats.ts]] - `imports_from` [EXTRACTED]
+- [[statsRoutes()]] - `imports` [EXTRACTED]
 - [[workout-plan.ts]] - `imports_from` [EXTRACTED]
 - [[workoutPlanRoutes()]] - `imports` [EXTRACTED]
 
