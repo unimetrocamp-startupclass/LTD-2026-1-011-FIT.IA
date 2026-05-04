@@ -1,0 +1,16 @@
+---
+source_file: "AGENTS.md"
+type: "document"
+community: "Community 9"
+tags:
+  - graphify/document
+  - graphify/EXTRACTED
+  - community/Community_9
+---
+
+# Graphify Query Commands
+
+## Connections
+- [[Graphify Workflow]] - `references` [EXTRACTED]
+
+#graphify/document #graphify/EXTRACTED #community/Community_9

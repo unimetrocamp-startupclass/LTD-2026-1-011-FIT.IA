@@ -1,0 +1,236 @@
+{
+  "main": {
+    "id": "1ea4225b9500dbde",
+    "type": "split",
+    "children": [
+      {
+        "id": "a19d8b76a6daf9d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce1c2197abeeca55",
+            "type": "leaf",
+            "state": {
+              "type": "3d-graph-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "3d graph"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fe927d0b86b8e1dc",
+    "type": "split",
+    "children": [
+      {
+        "id": "c47476d37357f726",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4b9c88fba280c24",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "27c6089ccc87bca9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          },
+          {
+            "id": "d70af2d27127fc1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ea06f514db8657c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "9bbd9bb64afdb6e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3dbef5ff97234b5f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos"
+            }
+          },
+          {
+            "id": "b4e8e80c8cb24e53",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "6acd850968b0fa80",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "5a62fe24549963f7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "673860ae5363a6c3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário"
+            }
+          },
+          {
+            "id": "61c17f5e03ffd906",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian42-brat:BRAT": false,
+      "new-3d-graph:Open 3d graph": false,
+      "markdown-importer:Abrir importador Markdown": false
+    }
+  },
+  "active": "ce1c2197abeeca55",
+  "lastOpenFiles": [
+    "backend/graphify-out/cache/ast/308755d64bafc96db5cdd88820f214af9ac342c7b17a37967f018d7f6d6f6966.json",
+    "backend/graphify-out/cache/ast/1786dee31e1208de83101db693b0dc855caac91f9cd6866a5a6293cd8c4617b0.json",
+    "backend/graphify-out/cache/ast/139db47988f9ea824257b1839c80d74b580f4957f150c552775e2900a7b5f953.json",
+    "backend/graphify-out/cache/ast/4faf8147adff7b84bd2eb7ef2f40b5cb141296d0c616e0bd7b1952304dbdc567.json",
+    "backend/src/usecases/GetWorkoutDay.ts",
+    "backend/task/05.md",
+    "backend/task/Untitled",
+    "backend/graphify-out/cache/ast/58570c04864de33e05146159dcbbd426254432322a9e61a9faf1d696b942646f.json",
+    "backend/graphify-out/cache/ast/74949be5f7e68e65a11bf1b04a58798fa441503e8a14c4d1ade4b55bf278f0a2.json",
+    "backend/graphify-out/cache/ast/0877ffb0f61e8daf866380561153ade69f24765dcbf90e45145e632f0c02843b.json",
+    "backend/install.sh",
+    "backend/graphify-out/obsidian/FILE_GROUPS.md",
+    "backend/docs/FILE_GROUPS.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 9.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 8.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 7.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 6.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 5.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 4.md",
+    "backend/graphify-out/obsidian/WorkoutPlanNotActiveError.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 3.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 2.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 11.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 10.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 1.md",
+    "backend/graphify-out/obsidian/_COMMUNITY_Community 0.md",
+    "backend/graphify-out/obsidian/WorkoutSessionAlreadyStartedError.md",
+    "backend/graphify-out/obsidian/WorkoutSessionAlreadyCompletedError.md",
+    "backend/graphify-out/obsidian/workoutPlanRoutes().md",
+    "backend/graphify-out/obsidian/WorkoutSession.ts.md",
+    "backend/graphify-out/obsidian/WorkoutExercise.ts.md",
+    "backend/graphify-out/obsidian/WorkoutPlan.ts.md",
+    "backend/graphify-out/obsidian/workout-plan.ts.md",
+    "backend/graphify-out/obsidian/WorkoutDay.ts.md",
+    "backend/graphify-out/obsidian/Workout Streak Calculation.md",
+    "backend/graphify-out/obsidian/graph.canvas",
+    "backend/graphify-out/obsidian",
+    "Sem título.canvas"
+  ]
+}
