@@ -95,6 +95,10 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
 - Quando um use case receber um parâmetro, ele deve **SEMPRE** ser um DTO (`InputDto`), que é uma interface definida no mesmo arquivo.
 - O retorno de um use case deve **SEMPRE** ser tipado com uma interface `OutputDto`, definida no mesmo arquivo. O use case deve mapear o resultado do banco para o `OutputDto`, **NUNCA** retornando o model do Prisma diretamente. Isso garante desacoplamento entre a camada de negócio e o banco de dados.
 - Ao precisar interagir com o banco de dados, um use case deve **SEMPRE** chamar o Prisma diretamente, e não um repository.
+- Ao buscar dados para montar um `OutputDto`, prefira `select` ao invés de `include` quando a resposta não precisar do model completo. Não carregue `createdAt`, `updateAt`, relações inteiras ou colunas que não serão retornadas.
+- Em rotas protegidas, filtre ownership diretamente no `where` da consulta Prisma sempre que possível (por exemplo `workoutPlan: { userId }`), em vez de buscar registros de outro usuário e descartar em memória. Quando a regra exigir validações separadas com mensagens/erros diferentes, mantenha as consultas adicionais restritas com `select`.
+- Sempre defina `orderBy` explícito para listas retornadas por endpoints (`exercises`, `sessions`, `workoutDays`, etc.) quando a ordem fizer parte da experiência ou puder afetar a estabilidade da resposta.
+- Para campos de data de calendário (`YYYY-MM-DD`) derivados de `Date`, formate sempre em UTC com `dayjs.utc(...).format("YYYY-MM-DD")`. Evite depender de timezone local ou de manipulação manual de string.
 - Nos use cases **NUNCA** use `try`/`catch` para converter falhas HTTP ou engolir exceções. Quem trata erro no sentido HTTP (bloco `try`/`catch` no handler e `reply.status`) é **sempre** a rota @src/routes. Os use cases **devem** lançar erros customizados quando uma regra de negócio falha.
 - Caso um use case lance uma exceção por falha de negócio, deve ser **SEMPRE** um erro customizado. Essas classes ficam em @src/erros/index.ts. Caso um erro necessário não exista, crie-o na mesma pasta e exporte-o no `index`.
 
