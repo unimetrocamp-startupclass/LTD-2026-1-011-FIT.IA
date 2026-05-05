@@ -1,16 +1,19 @@
 ---
 type: community
-members: 3
+members: 6
 ---
 
 # Community 6
 
-**Members:** 3 nodes
+**Members:** 6 nodes
 
 ## Members
-- [[GRAPH_REPORT]] - document - AGENTS.md
-- [[Graphify Query Commands]] - document - AGENTS.md
-- [[Graphify Workflow]] - document - AGENTS.md
+- [[.buildConsistencyByDay()_1]] - code - src/usecases/GetStats.ts
+- [[.calculateTotalTimeInSeconds()]] - code - src/usecases/GetStats.ts
+- [[.calculateWorkoutStreak()_1]] - code - src/usecases/GetStats.ts
+- [[.execute()_3]] - code - src/usecases/GetStats.ts
+- [[.getCompletedSessionDates()_1]] - code - src/usecases/GetStats.ts
+- [[GetStats]] - code - src/usecases/GetStats.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -18,3 +21,10 @@ members: 3
 TABLE source_file, type FROM #community/Community_6
 SORT file.name ASC
 ```
+
+## Connections to other communities
+- 1 edge to [[_COMMUNITY_Community 1]]
+- 1 edge to [[_COMMUNITY_Community 4]]
+
+## Top bridge nodes
+- [[GetStats]] - degree 7, connects to 2 communities

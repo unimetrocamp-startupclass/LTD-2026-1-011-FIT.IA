@@ -1,29 +1,24 @@
 ---
 type: community
-members: 16
+members: 11
 ---
 
 # Community 2
 
-**Members:** 16 nodes
+**Members:** 11 nodes
 
 ## Members
-- [[.constructor()]] - code - src/erros/index.ts
-- [[.constructor()_4]] - code - src/erros/index.ts
-- [[GetHome.ts]] - code - src/usecases/GetHome.ts
-- [[GetStats.ts]] - code - src/usecases/GetStats.ts
-- [[Home API Route Task]] - rationale - task/03.md
-- [[NotFoundError]] - code - src/erros/index.ts
-- [[ValidationError]] - code - src/erros/index.ts
-- [[auth.ts]] - code - src/lib/auth.ts
-- [[buildApiDescription()]] - code - src/index.ts
-- [[handler()]] - code - src/index.ts
-- [[home.ts]] - code - src/routes/home.ts
-- [[homeRoutes()]] - code - src/routes/home.ts
-- [[index.ts]] - code - src/index.ts
-- [[index.ts_2]] - code - src/schemas/index.ts
-- [[stats.ts]] - code - src/routes/stats.ts
-- [[statsRoutes()]] - code - src/routes/stats.ts
+- [[.execute()_1]] - code - src/usecases/get-user-train-data.ts
+- [[.execute()_10]] - code - src/usecases/UpsertUserTrainData.ts
+- [[App Service]] - document - docker-compose.yml
+- [[GetUserTrainData]] - code - src/usecases/get-user-train-data.ts
+- [[GetUserTrainData.ts]] - code - src/usecases/get-user-train-data.ts
+- [[GetUserTrainData.ts_1]] - code - src/usecases/GetUserTrainData.ts
+- [[Postgres Service]] - document - docker-compose.yml
+- [[UpsertUserTrainData_1]] - code - src/usecases/UpsertUserTrainData.ts
+- [[UpsertUserTrainData.ts]] - code - src/usecases/UpsertUserTrainData.ts
+- [[db.ts]] - code - src/lib/db.ts
+- [[prisma.config.ts]] - code - prisma.config.ts
 
 ## Live Query (requires Dataview plugin)
 
@@ -33,15 +28,17 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 15 edges to [[_COMMUNITY_Community 1]]
-- 5 edges to [[_COMMUNITY_Community 3]]
-- 4 edges to [[_COMMUNITY_Community 0]]
-- 3 edges to [[_COMMUNITY_Community 4]]
-- 2 edges to [[_COMMUNITY_Community 5]]
+- 7 edges to [[_COMMUNITY_Community 4]]
+- 3 edges to [[_COMMUNITY_Community 1]]
+- 2 edges to [[_COMMUNITY_Community 3]]
+- 1 edge to [[_COMMUNITY_Community 0]]
+- 1 edge to [[_COMMUNITY_Community 10]]
+- 1 edge to [[_COMMUNITY_Community 9]]
+- 1 edge to [[_COMMUNITY_Community 8]]
+- 1 edge to [[_COMMUNITY_Community 7]]
 
 ## Top bridge nodes
-- [[GetHome.ts]] - degree 7, connects to 4 communities
-- [[GetStats.ts]] - degree 6, connects to 3 communities
-- [[NotFoundError]] - degree 13, connects to 2 communities
-- [[index.ts]] - degree 9, connects to 2 communities
-- [[home.ts]] - degree 9, connects to 2 communities
+- [[db.ts]] - degree 15, connects to 8 communities
+- [[GetUserTrainData.ts_1]] - degree 5, connects to 2 communities
+- [[GetUserTrainData]] - degree 4, connects to 1 community
+- [[UpsertUserTrainData.ts]] - degree 4, connects to 1 community

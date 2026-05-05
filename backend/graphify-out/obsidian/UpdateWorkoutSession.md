@@ -1,20 +1,20 @@
 ---
 source_file: "src/usecases/UpdateWorkoutSession.ts"
 type: "code"
-community: "Community 1"
+community: "Community 7"
 location: "L28"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/Community_7
 ---
 
 # UpdateWorkoutSession
 
 ## Connections
-- [[.execute()_6]] - `method` [EXTRACTED]
+- [[.execute()_8]] - `method` [EXTRACTED]
 - [[Update Workout Session Route Task]] - `references` [EXTRACTED]
 - [[UpdateWorkoutSession.ts]] - `contains` [EXTRACTED]
 - [[workout-plan.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_1
+#graphify/code #graphify/EXTRACTED #community/Community_7

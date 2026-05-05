@@ -8,9 +8,9 @@ members: 3
 **Members:** 3 nodes
 
 ## Members
-- [[App Service]] - document - docker-compose.yml
-- [[Postgres Service]] - document - docker-compose.yml
-- [[prisma.config.ts]] - code - prisma.config.ts
+- [[GRAPH_REPORT]] - document - AGENTS.md
+- [[Graphify Query Commands]] - document - AGENTS.md
+- [[Graphify Workflow]] - document - AGENTS.md
 
 ## Live Query (requires Dataview plugin)
 
@@ -18,9 +18,3 @@ members: 3
 TABLE source_file, type FROM #community/Community_11
 SORT file.name ASC
 ```
-
-## Connections to other communities
-- 1 edge to [[_COMMUNITY_Community 8]]
-
-## Top bridge nodes
-- [[App Service]] - degree 3, connects to 1 community

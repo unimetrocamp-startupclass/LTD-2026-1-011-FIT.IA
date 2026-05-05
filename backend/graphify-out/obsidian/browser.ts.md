@@ -1,12 +1,12 @@
 ---
 source_file: "src/generated/prisma/browser.ts"
 type: "code"
-community: "Community 7"
+community: "Community 12"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_7
+  - community/Community_12
 ---
 
 # browser.ts
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[prismaNamespaceBrowser.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_7
+#graphify/code #graphify/EXTRACTED #community/Community_12

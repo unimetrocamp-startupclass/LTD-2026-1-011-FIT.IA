@@ -1,12 +1,12 @@
 ---
 source_file: "src/usecases/GetWorkoutDay.ts"
 type: "code"
-community: "Community 3"
+community: "Community 10"
 location: "L40"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Community_10
 ---
 
 # formatDate()
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[GetWorkoutDay.ts]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Community_10

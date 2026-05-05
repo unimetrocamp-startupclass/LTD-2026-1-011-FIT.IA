@@ -1,11 +1,11 @@
 ---
 source_file: "task/03.md"
 type: "rationale"
-community: "Community 2"
+community: "Community 1"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/Community_1
 ---
 
 # Home API Route Task
@@ -18,4 +18,4 @@ tags:
 - [[homeRoutes()]] - `references` [EXTRACTED]
 - [[index.ts_2]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_2
+#graphify/rationale #graphify/EXTRACTED #community/Community_1

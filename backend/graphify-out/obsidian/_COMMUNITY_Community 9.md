@@ -8,9 +8,9 @@ members: 4
 **Members:** 4 nodes
 
 ## Members
-- [[.execute()]] - code - src/usecases/CreateWorkoutPlan.ts
-- [[CreateWorkoutPlan]] - code - src/usecases/CreateWorkoutPlan.ts
-- [[CreateWorkoutPlan.ts]] - code - src/usecases/CreateWorkoutPlan.ts
+- [[.execute()_5]] - code - src/usecases/GetWorkoutPlan.ts
+- [[GetWorkoutPlan]] - code - src/usecases/GetWorkoutPlan.ts
+- [[GetWorkoutPlan.ts]] - code - src/usecases/GetWorkoutPlan.ts
 - [[workout-plan.ts]] - code - src/routes/workout-plan.ts
 
 ## Live Query (requires Dataview plugin)
@@ -22,13 +22,14 @@ SORT file.name ASC
 
 ## Connections to other communities
 - 5 edges to [[_COMMUNITY_Community 4]]
-- 4 edges to [[_COMMUNITY_Community 1]]
-- 4 edges to [[_COMMUNITY_Community 6]]
-- 3 edges to [[_COMMUNITY_Community 7]]
+- 4 edges to [[_COMMUNITY_Community 3]]
+- 3 edges to [[_COMMUNITY_Community 1]]
 - 3 edges to [[_COMMUNITY_Community 8]]
-- 2 edges to [[_COMMUNITY_Community 3]]
-- 1 edge to [[_COMMUNITY_Community 0]]
+- 3 edges to [[_COMMUNITY_Community 7]]
+- 3 edges to [[_COMMUNITY_Community 0]]
+- 2 edges to [[_COMMUNITY_Community 10]]
+- 1 edge to [[_COMMUNITY_Community 2]]
 
 ## Top bridge nodes
-- [[workout-plan.ts]] - degree 20, connects to 6 communities
-- [[CreateWorkoutPlan.ts]] - degree 6, connects to 4 communities
+- [[workout-plan.ts]] - degree 22, connects to 7 communities
+- [[GetWorkoutPlan.ts]] - degree 6, connects to 3 communities

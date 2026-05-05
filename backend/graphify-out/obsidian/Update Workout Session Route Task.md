@@ -1,11 +1,11 @@
 ---
 source_file: "task/02.md"
 type: "rationale"
-community: "Community 1"
+community: "Community 0"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Community_1
+  - community/Community_0
 ---
 
 # Update Workout Session Route Task
@@ -16,4 +16,4 @@ tags:
 - [[WorkoutSessionAlreadyCompletedError]] - `conceptually_related_to` [INFERRED]
 - [[workoutPlanRoutes()]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Community_1
+#graphify/rationale #graphify/EXTRACTED #community/Community_0
