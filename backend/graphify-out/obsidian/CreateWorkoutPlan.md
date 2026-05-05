@@ -14,6 +14,7 @@ tags:
 ## Connections
 - [[.execute()]] - `method` [EXTRACTED]
 - [[CreateWorkoutPlan.ts]] - `contains` [EXTRACTED]
+- [[ai.ts]] - `imports` [EXTRACTED]
 - [[workout-plan.ts]] - `imports` [EXTRACTED]
 
 #graphify/code #graphify/EXTRACTED #community/Community_3

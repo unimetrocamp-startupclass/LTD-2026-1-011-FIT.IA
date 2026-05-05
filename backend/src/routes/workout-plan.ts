@@ -115,10 +115,7 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
 
         const result = await getWorkoutPlans.execute({
           userId: session.user.id,
-          active:
-            request.query.active === undefined
-              ? undefined
-              : request.query.active === "true",
+          active: request.query.active,
         });
 
         return reply.status(200).send(result);

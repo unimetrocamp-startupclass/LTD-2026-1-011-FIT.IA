@@ -1,12 +1,12 @@
 ---
 source_file: "src/routes/home.ts"
 type: "code"
-community: "Community 2"
+community: "Community 1"
 location: "L14"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_2
+  - community/Community_1
 ---
 
 # homeRoutes()
@@ -16,4 +16,4 @@ tags:
 - [[home.ts]] - `contains` [EXTRACTED]
 - [[index.ts]] - `imports` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_2
+#graphify/code #graphify/EXTRACTED #community/Community_1

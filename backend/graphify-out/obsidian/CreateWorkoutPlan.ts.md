@@ -14,6 +14,7 @@ tags:
 ## Connections
 - [[CreateWorkoutPlan]] - `contains` [EXTRACTED]
 - [[NotFoundError]] - `imports` [EXTRACTED]
+- [[ai.ts]] - `imports_from` [EXTRACTED]
 - [[db.ts]] - `imports_from` [EXTRACTED]
 - [[enums.ts]] - `imports_from` [EXTRACTED]
 - [[index.ts_1]] - `imports_from` [EXTRACTED]

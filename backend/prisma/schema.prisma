@@ -14,8 +14,12 @@ datasource db {
 }
 
 model User {
-  id           String        @id @default(uuid())
-  workoutPlans WorkoutPlan[]
+  id                  String        @id @default(uuid())
+  workoutPlans        WorkoutPlan[]
+  weightInGrams       Int?
+  heightInCentimeters Int?
+  age                 Int?
+  bodyFatPercentage   Int?
 
   createdAt     DateTime  @default(now()) @db.Timestamptz()
   updateAt      DateTime  @updatedAt @db.Timestamptz()

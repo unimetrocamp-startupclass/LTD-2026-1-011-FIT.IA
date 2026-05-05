@@ -1,12 +1,12 @@
 ---
 source_file: "src/usecases/GetWorkoutDay.ts"
 type: "code"
-community: "Community 3"
+community: "Community 10"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Community_3
+  - community/Community_10
 ---
 
 # GetWorkoutDay.ts
@@ -20,4 +20,4 @@ tags:
 - [[index.ts_1]] - `imports_from` [EXTRACTED]
 - [[workout-plan.ts]] - `imports_from` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Community_3
+#graphify/code #graphify/EXTRACTED #community/Community_10

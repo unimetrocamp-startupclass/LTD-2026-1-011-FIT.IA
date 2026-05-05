@@ -2,7 +2,7 @@
 source_file: "src/routes/workout-plan.ts"
 type: "code"
 community: "Community 0"
-location: "L32"
+location: "L35"
 tags:
   - graphify/code
   - graphify/EXTRACTED
