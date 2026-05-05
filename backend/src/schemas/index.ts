@@ -77,16 +77,14 @@ export const GetWorkoutPlanParamsSchema = z.object({
   workoutPlanId: z.uuid(),
 });
 
-export const GetWorkoutPlansQuerySchema = z.object({
+export const ListWorkoutPlansQuerySchema = z.object({
   active: z
     .enum(["true", "false"])
     .transform((value) => value === "true")
     .optional(),
 });
 
-export const ListWorkoutPlansQuerySchema = GetWorkoutPlansQuerySchema;
-
-export const GetWorkoutPlansResponseSchema = z.object({
+export const ListWorkoutPlansResponseSchema = z.object({
   workoutPlans: z.array(
     z.object({
       id: z.uuid(),
@@ -108,7 +106,7 @@ export const GetWorkoutPlansResponseSchema = z.object({
   ),
 });
 
-export const ListWorkoutPlansSchema = GetWorkoutPlansResponseSchema;
+export const ListWorkoutPlansSchema = ListWorkoutPlansResponseSchema;
 
 export const GetWorkoutPlanResponseSchema = z.object({
   id: z.uuid(),

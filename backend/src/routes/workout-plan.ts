@@ -16,8 +16,8 @@ import {
   GetWorkoutDayResponseSchema,
   GetWorkoutPlanParamsSchema,
   GetWorkoutPlanResponseSchema,
-  GetWorkoutPlansQuerySchema,
-  GetWorkoutPlansResponseSchema,
+  ListWorkoutPlansQuerySchema,
+  ListWorkoutPlansResponseSchema,
   StartWorkoutSessionParamsSchema,
   StartWorkoutSessionResponseSchema,
   UpdateWorkoutSessionBodySchema,
@@ -28,7 +28,7 @@ import {
 import { CreateWorkoutPlan } from "../usecases/CreateWorkoutPlan.js";
 import { GetWorkoutDay } from "../usecases/GetWorkoutDay.js";
 import { GetWorkoutPlan } from "../usecases/GetWorkoutPlan.js";
-import { GetWorkoutPlans } from "../usecases/GetWorkoutPlans.js";
+import { ListWorkoutPlans } from "../usecases/ListWorkoutPlans.js";
 import { StartWorkoutSession } from "../usecases/StartWorkoutSession.js";
 import { UpdateWorkoutSession } from "../usecases/UpdateWorkoutSession.js";
 
@@ -91,9 +91,9 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
     schema: {
       tags: ["Workout Plan"],
       summary: "List workout plans",
-      querystring: GetWorkoutPlansQuerySchema,
+      querystring: ListWorkoutPlansQuerySchema,
       response: {
-        200: GetWorkoutPlansResponseSchema,
+        200: ListWorkoutPlansResponseSchema,
         400: ErrorSchema,
         401: ErrorSchema,
         500: ErrorSchema,
@@ -111,9 +111,9 @@ export const workoutPlanRoutes = async (app: FastifyInstance) => {
           });
         }
 
-        const getWorkoutPlans = new GetWorkoutPlans();
+        const listWorkoutPlans = new ListWorkoutPlans();
 
-        const result = await getWorkoutPlans.execute({
+        const result = await listWorkoutPlans.execute({
           userId: session.user.id,
           active: request.query.active,
         });

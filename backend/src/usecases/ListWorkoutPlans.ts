@@ -42,7 +42,7 @@ const weekDayOrder: Record<WeekDay, number> = {
   [WeekDay.SUNDAY]: 7,
 };
 
-export class GetWorkoutPlans {
+export class ListWorkoutPlans {
   async execute(dto: InputDto): Promise<OutputDto> {
     const workoutPlans = await prisma.workoutPlan.findMany({
       where: {
