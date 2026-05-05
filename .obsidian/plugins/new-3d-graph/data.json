@@ -1,0 +1,134 @@
+{
+  "searchQuery": "",
+  "showNeighboringNodes": true,
+  "filters": [],
+  "showAttachments": true,
+  "hideOrphans": false,
+  "showTags": true,
+  "groups": [
+    {
+      "query": "path: backend/src/index.ts",
+      "color": "#3b82f6"
+    },
+    {
+      "query": "path: backend/src/routes",
+      "color": "#3b82f6"
+    },
+    {
+      "query": "path: backend/src/usecases",
+      "color": "#10b981"
+    },
+    {
+      "query": "path: backend/src/lib/auth.ts",
+      "color": "#10b981"
+    },
+    {
+      "query": "path: backend/prisma",
+      "color": "#f59e0b"
+    },
+    {
+      "query": "path: backend/src/lib/db.ts",
+      "color": "#f59e0b"
+    },
+    {
+      "query": "path: backend/src/generated",
+      "color": "#f59e0b"
+    },
+    {
+      "query": "path: backend/src/schemas",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/src/erros",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/package.json",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/pnpm-lock.yaml",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/tsconfig.json",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/eslint.config.js",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/prisma.config.ts",
+      "color": "#ec4899"
+    },
+    {
+      "query": "docker-compose.yml",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/Dockerfile",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/.dockerignore",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/.gitignore",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/.npmrc",
+      "color": "#ec4899"
+    },
+    {
+      "query": "path: backend/AGENTS.md",
+      "color": "#8b5cf6"
+    },
+    {
+      "query": "path: backend/docs/API_PROMPT.md",
+      "color": "#8b5cf6"
+    },
+    {
+      "query": "path: backend/task/",
+      "color": "#8b5cf6"
+    },
+    {
+      "query": "path: backend",
+      "color": "#84cc16"
+    }
+  ],
+  "useThemeColors": true,
+  "colorNode": "#2080F0",
+  "colorTag": "#9A49E8",
+  "colorAttachment": "#75B63A",
+  "colorLink": "#666666",
+  "colorHighlight": "#FFB800",
+  "backgroundColor": "#0E0E10",
+  "nodeSize": 5,
+  "tagNodeSize": 5,
+  "attachmentNodeSize": 5,
+  "linkThickness": 1,
+  "nodeShape": "Sphere",
+  "tagShape": "Tetrahedron",
+  "attachmentShape": "Cube",
+  "showNodeLabels": true,
+  "labelDistance": 50,
+  "labelFadeThreshold": 0.8,
+  "labelTextSize": 2.5,
+  "labelTextColorLight": "#000000",
+  "labelTextColorDark": "#ffffff",
+  "labelBackgroundColor": "#ffffff",
+  "labelBackgroundOpacity": 0.3,
+  "labelOcclusion": false,
+  "useKeyboardControls": true,
+  "keyboardMoveSpeed": 1.2,
+  "zoomOnClick": true,
+  "rotateSpeed": 1.4,
+  "panSpeed": 1.4,
+  "zoomSpeed": 1.4,
+  "centerForce": 0,
+  "repelForce": 12.2,
+  "linkForce": 0.019
+}

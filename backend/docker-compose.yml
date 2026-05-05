@@ -2,6 +2,10 @@ services:
   app:
     build: .
     container_name: fitia-app
+    command: >
+      sh -c "pnpm exec prisma generate &&
+             pnpm exec prisma migrate deploy &&
+             pnpm run dev"
     env_file:
       - .env
     environment:
@@ -15,6 +19,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    restart: unless-stopped
 
   postgres:
     image: postgres:16-alpine
@@ -34,6 +39,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    restart: unless-stopped
 
 volumes:
   postgres_data:
