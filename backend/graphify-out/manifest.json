@@ -32,67 +32,67 @@
     "hash": "da065ce989c1ae195ced7e374c18c69e"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\browser.ts": {
-    "mtime": 1777897060.944913,
+    "mtime": 1777984181.9186127,
     "hash": "ddb4fdd898e12e5f08a49b3603778700"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\client.ts": {
-    "mtime": 1777897060.944913,
+    "mtime": 1777984181.918084,
     "hash": "b2b18b752649cb9c3b9dc27396a53cd7"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\commonInputTypes.ts": {
-    "mtime": 1777897060.944913,
+    "mtime": 1777984181.918084,
     "hash": "eaebc0c79370bf3c85a2cec281c3d23c"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\enums.ts": {
-    "mtime": 1777897060.944913,
+    "mtime": 1777984181.9186127,
     "hash": "1aaf8959efdd7bac59afca8f19659003"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models.ts": {
-    "mtime": 1777897060.944913,
+    "mtime": 1777984181.9201763,
     "hash": "32e00afbe891f31e52e12cb233e2c72d"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\internal\\class.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9629848,
     "hash": "c1896512eccd59a2333a35934b3855c5"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\internal\\prismaNamespace.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9629848,
     "hash": "d56e5989aa957a1f9b9c7b8b4efa16fe"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts": {
-    "mtime": 1777897060.9777613,
+    "mtime": 1777984181.9684522,
     "hash": "91c7afcff34bce859c03a02f7c0cb869"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\Account.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9612842,
     "hash": "403de2a556da6a0e70bf95223d1d7932"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\Session.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9629848,
     "hash": "220043b4e50441d5441b497c3954c2b3"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\User.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.957057,
     "hash": "ed75a3f7382010154fa45da97fe3f3e5"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\Verification.ts": {
-    "mtime": 1777897060.9777613,
+    "mtime": 1777984181.9672503,
     "hash": "83823bd4ff20e3874dbd810f21068607"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutDay.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9612842,
     "hash": "d46298e597f82f20327fe682d30de6a7"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutExercise.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9553494,
     "hash": "92a0204d413857f2068e2e73b7ba8d82"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutPlan.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.957057,
     "hash": "5cc71da446df713a7c78634a9d551f0d"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutSession.ts": {
-    "mtime": 1777897060.9734507,
+    "mtime": 1777984181.9582615,
     "hash": "203959c7b4899f720762decb05bf6433"
   },
   "C:\\Work\\FitIA\\backend\\src\\lib\\auth.ts": {
@@ -112,12 +112,12 @@
     "hash": "c00449e80fdb0d5e8ba33852bdcd2d5f"
   },
   "C:\\Work\\FitIA\\backend\\src\\routes\\workout-plan.ts": {
-    "mtime": 1777916084.2353384,
-    "hash": "79ee141c203a443b03016ed04320a80d"
+    "mtime": 1777984835.8280296,
+    "hash": "932527a002ab389bb8f66d8703d0ad2b"
   },
   "C:\\Work\\FitIA\\backend\\src\\schemas\\index.ts": {
-    "mtime": 1777915743.0843115,
-    "hash": "2108f9ccbc2da8893db24d1874e13b23"
+    "mtime": 1777986637.3083487,
+    "hash": "ba05a846564202070ec31d0a0f03fcb6"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\CreateWorkoutPlan.ts": {
     "mtime": 1777914960.5730865,
@@ -138,6 +138,10 @@
   "C:\\Work\\FitIA\\backend\\src\\usecases\\GetWorkoutPlan.ts": {
     "mtime": 1777906622.4730196,
     "hash": "a6d55ee93ae04ba39ff07b74c3e79c42"
+  },
+  "C:\\Work\\FitIA\\backend\\src\\usecases\\GetWorkoutPlans.ts": {
+    "mtime": 1777986637.269563,
+    "hash": "d41e59e2fa35b58e2613cd2fab94b88a"
   },
   "C:\\Work\\FitIA\\backend\\src\\usecases\\StartWorkoutSession.ts": {
     "mtime": 1777914960.6206923,
