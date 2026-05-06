@@ -4,8 +4,8 @@
     "hash": "8e65a19f17357b15317951ddcc751b07"
   },
   "C:\\Work\\FitIA\\backend\\prisma.config.ts": {
-    "mtime": 1773508802.5558763,
-    "hash": "f6143a6083213d512c0beaa8d98daf63"
+    "mtime": 1778096920.4870913,
+    "hash": "de1bd89e179b6347eb3ebf1e43690d07"
   },
   "C:\\Work\\FitIA\\backend\\prisma\\migrations\\20260314190950_init\\migration.sql": {
     "mtime": 1773515558.4070106,
@@ -28,84 +28,88 @@
     "hash": "96886e606c6d664bc9cae079a1daa74a"
   },
   "C:\\Work\\FitIA\\backend\\src\\index.ts": {
-    "mtime": 1778075847.607312,
-    "hash": "fdba3dc17ea48828954b69f21dd34999"
+    "mtime": 1778096929.6005692,
+    "hash": "a7d43852a2038057906505154e6ca649"
   },
   "C:\\Work\\FitIA\\backend\\src\\erros\\index.ts": {
     "mtime": 1777916084.154622,
     "hash": "da065ce989c1ae195ced7e374c18c69e"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\browser.ts": {
-    "mtime": 1778072153.742682,
+    "mtime": 1778095285.200945,
     "hash": "ddb4fdd898e12e5f08a49b3603778700"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\client.ts": {
-    "mtime": 1778072153.7474685,
+    "mtime": 1778095285.1986375,
     "hash": "b2b18b752649cb9c3b9dc27396a53cd7"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\commonInputTypes.ts": {
-    "mtime": 1778072153.7474685,
+    "mtime": 1778095285.1986375,
     "hash": "69a5454fd3d339f1264c75a5001d841b"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\enums.ts": {
-    "mtime": 1778072153.742682,
+    "mtime": 1778095285.1986375,
     "hash": "1aaf8959efdd7bac59afca8f19659003"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models.ts": {
-    "mtime": 1778072153.7474685,
+    "mtime": 1778095285.200945,
     "hash": "32e00afbe891f31e52e12cb233e2c72d"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\internal\\class.ts": {
-    "mtime": 1778072153.7823448,
+    "mtime": 1778095285.2158191,
     "hash": "590399cc91dfedeba7949dca413d6449"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\internal\\prismaNamespace.ts": {
-    "mtime": 1778072153.7755518,
+    "mtime": 1778095285.2158191,
     "hash": "cf5ea53dcb66a91fa9769436b0687948"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts": {
-    "mtime": 1778072153.7755518,
+    "mtime": 1778095285.2158191,
     "hash": "90d64ab2cc20c7479271b2618a0af54f"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\Account.ts": {
-    "mtime": 1778072153.7745507,
+    "mtime": 1778095285.2228284,
     "hash": "403de2a556da6a0e70bf95223d1d7932"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\Session.ts": {
-    "mtime": 1778072153.7755518,
+    "mtime": 1778095285.225911,
     "hash": "220043b4e50441d5441b497c3954c2b3"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\User.ts": {
-    "mtime": 1778072153.772414,
+    "mtime": 1778095285.2158191,
     "hash": "d632f18d175a314097808da53166be30"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\Verification.ts": {
-    "mtime": 1778072153.7770562,
+    "mtime": 1778095285.235181,
     "hash": "83823bd4ff20e3874dbd810f21068607"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutDay.ts": {
-    "mtime": 1778072153.7735498,
+    "mtime": 1778095285.2158191,
     "hash": "d46298e597f82f20327fe682d30de6a7"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutExercise.ts": {
-    "mtime": 1778072153.772414,
+    "mtime": 1778095285.2216623,
     "hash": "92a0204d413857f2068e2e73b7ba8d82"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutPlan.ts": {
-    "mtime": 1778072153.7735498,
+    "mtime": 1778095285.2158191,
     "hash": "5cc71da446df713a7c78634a9d551f0d"
   },
   "C:\\Work\\FitIA\\backend\\src\\generated\\prisma\\models\\WorkoutSession.ts": {
-    "mtime": 1778072153.7745507,
+    "mtime": 1778095285.2211561,
     "hash": "203959c7b4899f720762decb05bf6433"
   },
   "C:\\Work\\FitIA\\backend\\src\\lib\\auth.ts": {
-    "mtime": 1778075787.991096,
-    "hash": "0e2c059f564a9b997afeace42a21001e"
+    "mtime": 1778096256.815118,
+    "hash": "2c9ee3ebdbea6b34c9a265520d024db2"
   },
   "C:\\Work\\FitIA\\backend\\src\\lib\\db.ts": {
-    "mtime": 1777155280.5544605,
-    "hash": "f0c679151f992ecc46245010671ebe0b"
+    "mtime": 1778096684.3224566,
+    "hash": "5af9eb962fde09dc3512e71bbd21adef"
+  },
+  "C:\\Work\\FitIA\\backend\\src\\lib\\env.ts": {
+    "mtime": 1778096298.2403183,
+    "hash": "039770191e858a5fda08aa52a2f0f97d"
   },
   "C:\\Work\\FitIA\\backend\\src\\routes\\ai.ts": {
     "mtime": 1778078687.0385861,
@@ -176,8 +180,8 @@
     "hash": "9c3a53609218620b02f4071b0c280acc"
   },
   "C:\\Work\\FitIA\\backend\\docker-compose.yml": {
-    "mtime": 1777831520.6823707,
-    "hash": "62c73de47fa31732896b9c7055427bf5"
+    "mtime": 1778096005.4484503,
+    "hash": "d7e57cd6a9e345e933d2eddf729dae7b"
   },
   "C:\\Work\\FitIA\\backend\\docs\\API_PROMPT.md": {
     "mtime": 1777896324.2840602,
