@@ -62,25 +62,25 @@
       "source_file": "src/index.ts",
       "source_location": "L1",
       "id": "src_index_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "index.ts"
     },
     {
       "label": "buildApiDescription()",
       "file_type": "code",
       "source_file": "src/index.ts",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "src_index_buildapidescription",
-      "community": 4,
+      "community": 5,
       "norm_label": "buildapidescription()"
     },
     {
       "label": "handler()",
       "file_type": "code",
       "source_file": "src/index.ts",
-      "source_location": "L209",
+      "source_location": "L214",
       "id": "src_index_handler",
-      "community": 4,
+      "community": 5,
       "norm_label": "handler()"
     },
     {
@@ -116,7 +116,7 @@
       "source_file": "src/erros/index.ts",
       "source_location": "L9",
       "id": "erros_index_workoutplannotactiveerror",
-      "community": 3,
+      "community": 2,
       "norm_label": "workoutplannotactiveerror"
     },
     {
@@ -125,7 +125,7 @@
       "source_file": "src/erros/index.ts",
       "source_location": "L10",
       "id": "erros_index_workoutplannotactiveerror_constructor",
-      "community": 3,
+      "community": 2,
       "norm_label": ".constructor()"
     },
     {
@@ -134,7 +134,7 @@
       "source_file": "src/erros/index.ts",
       "source_location": "L17",
       "id": "erros_index_workoutsessionalreadystartederror",
-      "community": 3,
+      "community": 2,
       "norm_label": "workoutsessionalreadystartederror"
     },
     {
@@ -143,7 +143,7 @@
       "source_file": "src/erros/index.ts",
       "source_location": "L18",
       "id": "erros_index_workoutsessionalreadystartederror_constructor",
-      "community": 3,
+      "community": 2,
       "norm_label": ".constructor()"
     },
     {
@@ -152,7 +152,7 @@
       "source_file": "src/erros/index.ts",
       "source_location": "L25",
       "id": "erros_index_workoutsessionalreadycompletederror",
-      "community": 3,
+      "community": 2,
       "norm_label": "workoutsessionalreadycompletederror"
     },
     {
@@ -161,7 +161,7 @@
       "source_file": "src/erros/index.ts",
       "source_location": "L26",
       "id": "erros_index_workoutsessionalreadycompletederror_constructor",
-      "community": 3,
+      "community": 2,
       "norm_label": ".constructor()"
     },
     {
@@ -197,7 +197,7 @@
       "source_file": "src/generated/prisma/client.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_client_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "client.ts"
     },
     {
@@ -206,7 +206,7 @@
       "source_file": "src/generated/prisma/commonInputTypes.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_commoninputtypes_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "commoninputtypes.ts"
     },
     {
@@ -215,7 +215,7 @@
       "source_file": "src/generated/prisma/enums.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_enums_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "enums.ts"
     },
     {
@@ -224,7 +224,7 @@
       "source_file": "src/generated/prisma/models.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "models.ts"
     },
     {
@@ -233,7 +233,7 @@
       "source_file": "src/generated/prisma/internal/class.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_internal_class_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "class.ts"
     },
     {
@@ -242,7 +242,7 @@
       "source_file": "src/generated/prisma/internal/class.ts",
       "source_location": "L41",
       "id": "internal_class_decodebase64aswasm",
-      "community": 2,
+      "community": 3,
       "norm_label": "decodebase64aswasm()"
     },
     {
@@ -251,7 +251,7 @@
       "source_file": "src/generated/prisma/internal/class.ts",
       "source_location": "L268",
       "id": "internal_class_getprismaclientclass",
-      "community": 2,
+      "community": 3,
       "norm_label": "getprismaclientclass()"
     },
     {
@@ -260,7 +260,7 @@
       "source_file": "src/generated/prisma/internal/prismaNamespace.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_internal_prismanamespace_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "prismanamespace.ts"
     },
     {
@@ -278,7 +278,7 @@
       "source_file": "src/generated/prisma/models/Account.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_account_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "account.ts"
     },
     {
@@ -287,7 +287,7 @@
       "source_file": "src/generated/prisma/models/Session.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_session_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "session.ts"
     },
     {
@@ -296,7 +296,7 @@
       "source_file": "src/generated/prisma/models/User.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_user_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "user.ts"
     },
     {
@@ -305,7 +305,7 @@
       "source_file": "src/generated/prisma/models/Verification.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_verification_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "verification.ts"
     },
     {
@@ -314,7 +314,7 @@
       "source_file": "src/generated/prisma/models/WorkoutDay.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_workoutday_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "workoutday.ts"
     },
     {
@@ -323,7 +323,7 @@
       "source_file": "src/generated/prisma/models/WorkoutExercise.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_workoutexercise_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "workoutexercise.ts"
     },
     {
@@ -332,7 +332,7 @@
       "source_file": "src/generated/prisma/models/WorkoutPlan.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_workoutplan_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "workoutplan.ts"
     },
     {
@@ -341,7 +341,7 @@
       "source_file": "src/generated/prisma/models/WorkoutSession.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_workoutsession_ts",
-      "community": 3,
+      "community": 2,
       "norm_label": "workoutsession.ts"
     },
     {
@@ -350,7 +350,7 @@
       "source_file": "src/lib/auth.ts",
       "source_location": "L1",
       "id": "src_lib_auth_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "auth.ts"
     },
     {
@@ -375,9 +375,9 @@
       "label": "aiRoutes()",
       "file_type": "code",
       "source_file": "src/routes/ai.ts",
-      "source_location": "L107",
+      "source_location": "L79",
       "id": "routes_ai_airoutes",
-      "community": 0,
+      "community": 5,
       "norm_label": "airoutes()"
     },
     {
@@ -386,7 +386,7 @@
       "source_file": "src/routes/home.ts",
       "source_location": "L1",
       "id": "src_routes_home_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "home.ts"
     },
     {
@@ -395,7 +395,7 @@
       "source_file": "src/routes/home.ts",
       "source_location": "L14",
       "id": "routes_home_homeroutes",
-      "community": 4,
+      "community": 5,
       "norm_label": "homeroutes()"
     },
     {
@@ -404,7 +404,7 @@
       "source_file": "src/routes/me.ts",
       "source_location": "L1",
       "id": "src_routes_me_ts",
-      "community": 4,
+      "community": 0,
       "norm_label": "me.ts"
     },
     {
@@ -413,7 +413,7 @@
       "source_file": "src/routes/me.ts",
       "source_location": "L16",
       "id": "routes_me_meroutes",
-      "community": 4,
+      "community": 5,
       "norm_label": "meroutes()"
     },
     {
@@ -422,7 +422,7 @@
       "source_file": "src/routes/stats.ts",
       "source_location": "L1",
       "id": "src_routes_stats_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "stats.ts"
     },
     {
@@ -431,7 +431,7 @@
       "source_file": "src/routes/stats.ts",
       "source_location": "L14",
       "id": "routes_stats_statsroutes",
-      "community": 4,
+      "community": 5,
       "norm_label": "statsroutes()"
     },
     {
@@ -449,7 +449,7 @@
       "source_file": "src/routes/workout-plan.ts",
       "source_location": "L35",
       "id": "routes_workout_plan_workoutplanroutes",
-      "community": 3,
+      "community": 2,
       "norm_label": "workoutplanroutes()"
     },
     {
@@ -458,7 +458,7 @@
       "source_file": "src/schemas/index.ts",
       "source_location": "L1",
       "id": "src_schemas_index_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "index.ts"
     },
     {
@@ -501,46 +501,73 @@
       "label": "GetHome",
       "file_type": "code",
       "source_file": "src/usecases/GetHome.ts",
-      "source_location": "L49",
+      "source_location": "L64",
       "id": "usecases_gethome_gethome",
-      "community": 5,
+      "community": 4,
       "norm_label": "gethome"
     },
     {
       "label": ".execute()",
       "file_type": "code",
       "source_file": "src/usecases/GetHome.ts",
-      "source_location": "L50",
+      "source_location": "L65",
       "id": "usecases_gethome_gethome_execute",
-      "community": 5,
+      "community": 4,
       "norm_label": ".execute()"
     },
     {
-      "label": ".buildConsistencyByDay()",
+      "label": ".buildWorkoutDaysByWeekDay()",
       "file_type": "code",
       "source_file": "src/usecases/GetHome.ts",
-      "source_location": "L142",
-      "id": "usecases_gethome_gethome_buildconsistencybyday",
-      "community": 5,
-      "norm_label": ".buildconsistencybyday()"
+      "source_location": "L183",
+      "id": "usecases_gethome_gethome_buildworkoutdaysbyweekday",
+      "community": 4,
+      "norm_label": ".buildworkoutdaysbyweekday()"
     },
     {
-      "label": ".getCompletedSessionDates()",
+      "label": ".groupSessionsByDate()",
       "file_type": "code",
       "source_file": "src/usecases/GetHome.ts",
-      "source_location": "L180",
-      "id": "usecases_gethome_gethome_getcompletedsessiondates",
-      "community": 5,
-      "norm_label": ".getcompletedsessiondates()"
+      "source_location": "L191",
+      "id": "usecases_gethome_gethome_groupsessionsbydate",
+      "community": 4,
+      "norm_label": ".groupsessionsbydate()"
     },
     {
-      "label": ".calculateWorkoutStreak()",
+      "label": ".calculateConsistencyByDay()",
       "file_type": "code",
       "source_file": "src/usecases/GetHome.ts",
-      "source_location": "L204",
-      "id": "usecases_gethome_gethome_calculateworkoutstreak",
-      "community": 5,
-      "norm_label": ".calculateworkoutstreak()"
+      "source_location": "L207",
+      "id": "usecases_gethome_gethome_calculateconsistencybyday",
+      "community": 4,
+      "norm_label": ".calculateconsistencybyday()"
+    },
+    {
+      "label": ".calculateStreak()",
+      "file_type": "code",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L231",
+      "id": "usecases_gethome_gethome_calculatestreak",
+      "community": 4,
+      "norm_label": ".calculatestreak()"
+    },
+    {
+      "label": ".getWeekDayFromDate()",
+      "file_type": "code",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L271",
+      "id": "usecases_gethome_gethome_getweekdayfromdate",
+      "community": 4,
+      "norm_label": ".getweekdayfromdate()"
+    },
+    {
+      "label": ".formatDateKey()",
+      "file_type": "code",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L279",
+      "id": "usecases_gethome_gethome_formatdatekey",
+      "community": 4,
+      "norm_label": ".formatdatekey()"
     },
     {
       "label": "GetStats.ts",
@@ -674,7 +701,7 @@
       "source_file": "src/usecases/GetWorkoutPlan.ts",
       "source_location": "L1",
       "id": "src_usecases_getworkoutplan_ts",
-      "community": 0,
+      "community": 1,
       "norm_label": "getworkoutplan.ts"
     },
     {
@@ -728,7 +755,7 @@
       "source_file": "src/usecases/StartWorkoutSession.ts",
       "source_location": "L1",
       "id": "src_usecases_startworkoutsession_ts",
-      "community": 3,
+      "community": 2,
       "norm_label": "startworkoutsession.ts"
     },
     {
@@ -737,7 +764,7 @@
       "source_file": "src/usecases/StartWorkoutSession.ts",
       "source_location": "L23",
       "id": "usecases_startworkoutsession_startworkoutsession",
-      "community": 3,
+      "community": 2,
       "norm_label": "startworkoutsession"
     },
     {
@@ -746,7 +773,7 @@
       "source_file": "src/usecases/StartWorkoutSession.ts",
       "source_location": "L24",
       "id": "usecases_startworkoutsession_startworkoutsession_execute",
-      "community": 3,
+      "community": 2,
       "norm_label": ".execute()"
     },
     {
@@ -802,6 +829,33 @@
       "id": "usecases_upsertusertraindata_upsertusertraindata_execute",
       "community": 0,
       "norm_label": ".execute()"
+    },
+    {
+      "label": ".buildConsistencyByDay()",
+      "file_type": "code",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L142",
+      "community": 4,
+      "norm_label": ".buildconsistencybyday()",
+      "id": "usecases_gethome_gethome_buildconsistencybyday"
+    },
+    {
+      "label": ".getCompletedSessionDates()",
+      "file_type": "code",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L180",
+      "community": 4,
+      "norm_label": ".getcompletedsessiondates()",
+      "id": "usecases_gethome_gethome_getcompletedsessiondates"
+    },
+    {
+      "label": ".calculateWorkoutStreak()",
+      "file_type": "code",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L204",
+      "community": 4,
+      "norm_label": ".calculateworkoutstreak()",
+      "id": "usecases_gethome_gethome_calculateworkoutstreak"
     },
     {
       "label": "GetWorkoutPlans.ts",
@@ -949,7 +1003,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "start workout session api requirement",
       "id": "docs_start_workout_session_api"
     },
@@ -962,7 +1016,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "start workout session route task",
       "id": "task01_start_workout_session_api"
     },
@@ -975,7 +1029,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "update workout session route task",
       "id": "task02_update_workout_session_api"
     },
@@ -988,7 +1042,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 5,
       "norm_label": "home api route task",
       "id": "task03_home_api"
     },
@@ -1001,7 +1055,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 2,
       "norm_label": "weekly consistency in utc",
       "id": "task03_weekly_consistency"
     },
@@ -1014,7 +1068,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 4,
       "norm_label": "workout streak calculation",
       "id": "task03_workout_streak"
     }
@@ -1040,6 +1094,28 @@
       "confidence_score": 1.0,
       "source": "src_index_ts",
       "target": "src_lib_auth_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/index.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index_ts",
+      "target": "src_routes_ai_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/index.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index_ts",
+      "target": "routes_ai_airoutes"
     },
     {
       "relation": "imports_from",
@@ -2019,17 +2095,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/routes/ai.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_routes_ai_ts",
-      "target": "src_generated_prisma_enums_ts"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/schemas/index.ts",
       "source_location": "L6",
       "weight": 1.0,
@@ -2088,9 +2153,20 @@
       "source_file": "src/usecases/ListWorkoutPlans.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_usecases_listworkoutplans_ts",
-      "target": "src_generated_prisma_enums_ts",
-      "confidence_score": 1.0
+      "target": "src_generated_prisma_enums_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/routes/ai.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_routes_ai_ts",
+      "target": "src_generated_prisma_enums_ts"
     },
     {
       "relation": "imports_from",
@@ -2452,9 +2528,9 @@
       "source_file": "src/usecases/ListWorkoutPlans.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_usecases_listworkoutplans_ts",
-      "target": "src_lib_db_ts",
-      "confidence_score": 1.0
+      "target": "src_lib_db_ts"
     },
     {
       "relation": "imports_from",
@@ -2605,9 +2681,9 @@
       "source_file": "src/routes/ai.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_routes_ai_ts",
-      "target": "src_usecases_listworkoutplans_ts",
-      "confidence_score": 1.0
+      "target": "src_usecases_listworkoutplans_ts"
     },
     {
       "relation": "imports",
@@ -2616,9 +2692,9 @@
       "source_file": "src/routes/ai.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_routes_ai_ts",
-      "target": "usecases_listworkoutplans_listworkoutplans",
-      "confidence_score": 1.0
+      "target": "usecases_listworkoutplans_listworkoutplans"
     },
     {
       "relation": "imports_from",
@@ -2941,9 +3017,9 @@
       "source_file": "src/routes/workout-plan.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_routes_workout_plan_ts",
-      "target": "src_usecases_listworkoutplans_ts",
-      "confidence_score": 1.0
+      "target": "src_usecases_listworkoutplans_ts"
     },
     {
       "relation": "imports",
@@ -2952,9 +3028,9 @@
       "source_file": "src/routes/workout-plan.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_routes_workout_plan_ts",
-      "target": "usecases_listworkoutplans_listworkoutplans",
-      "confidence_score": 1.0
+      "target": "usecases_listworkoutplans_listworkoutplans"
     },
     {
       "relation": "imports_from",
@@ -3116,6 +3192,66 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L177",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome",
+      "target": "usecases_gethome_gethome_buildworkoutdaysbyweekday"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L185",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome",
+      "target": "usecases_gethome_gethome_groupsessionsbydate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome",
+      "target": "usecases_gethome_gethome_calculateconsistencybyday"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome",
+      "target": "usecases_gethome_gethome_calculatestreak"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L199",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome",
+      "target": "usecases_gethome_gethome_getweekdayfromdate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L273",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome",
+      "target": "usecases_gethome_gethome_formatdatekey"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
       "source_location": "L135",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3157,6 +3293,61 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome_execute",
+      "target": "usecases_gethome_gethome_buildworkoutdaysbyweekday"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome_execute",
+      "target": "usecases_gethome_gethome_getweekdayfromdate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome_execute",
+      "target": "usecases_gethome_gethome_groupsessionsbydate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L144",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome_execute",
+      "target": "usecases_gethome_gethome_calculateconsistencybyday"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome_execute",
+      "target": "usecases_gethome_gethome_calculatestreak"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/usecases/GetHome.ts",
       "source_location": "L106",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3186,34 +3377,26 @@
       "target": "usecases_gethome_gethome_calculateworkoutstreak"
     },
     {
-      "relation": "rationale_for",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "task/03.md",
-      "source_location": null,
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L191",
       "weight": 1.0,
-      "source": "task03_weekly_consistency",
-      "target": "usecases_gethome_gethome_buildconsistencybyday"
+      "confidence_score": 1.0,
+      "source": "usecases_gethome_gethome_groupsessionsbydate",
+      "target": "usecases_gethome_gethome_formatdatekey"
     },
     {
-      "relation": "conceptually_related_to",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "task/03.md",
-      "source_location": null,
+      "source_file": "src/usecases/GetHome.ts",
+      "source_location": "L173",
       "weight": 1.0,
-      "source": "task03_workout_streak",
-      "target": "usecases_gethome_gethome_getcompletedsessiondates"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "task/03.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "task03_workout_streak",
-      "target": "usecases_gethome_gethome_calculateworkoutstreak"
+      "source": "usecases_gethome_gethome_calculatestreak",
+      "target": "usecases_gethome_gethome_getweekdayfromdate"
     },
     {
       "relation": "contains",
@@ -3405,9 +3588,9 @@
       "source_file": "src/usecases/ListWorkoutPlans.ts",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_usecases_listworkoutplans_ts",
-      "target": "usecases_listworkoutplans_listworkoutplans",
-      "confidence_score": 1.0
+      "target": "usecases_listworkoutplans_listworkoutplans"
     },
     {
       "relation": "method",
@@ -3415,9 +3598,9 @@
       "source_file": "src/usecases/ListWorkoutPlans.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "usecases_listworkoutplans_listworkoutplans",
-      "target": "usecases_listworkoutplans_listworkoutplans_execute",
-      "confidence_score": 1.0
+      "target": "usecases_listworkoutplans_listworkoutplans_execute"
     },
     {
       "relation": "contains",
@@ -3508,6 +3691,36 @@
       "confidence_score": 1.0,
       "source": "usecases_upsertusertraindata_upsertusertraindata",
       "target": "usecases_upsertusertraindata_upsertusertraindata_execute"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "task/03.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "task03_weekly_consistency",
+      "target": "usecases_gethome_gethome_buildconsistencybyday"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "task/03.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "task03_workout_streak",
+      "target": "usecases_gethome_gethome_getcompletedsessiondates"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "task/03.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "task03_workout_streak",
+      "target": "usecases_gethome_gethome_calculateworkoutstreak"
     },
     {
       "relation": "contains",
@@ -3634,5 +3847,5 @@
       "source_file": "task/03.md"
     }
   ],
-  "built_at_commit": "bda3fc01c9ef78457a7dce872c7c9c7572917b06"
+  "built_at_commit": "d7c79202c360b7b2673d3513fb0731a706611191"
 }
