@@ -9,3 +9,11 @@ backend/.env.*
 backend/.pnpm-store/
 backend/src/generated/prisma/
 backend/dist/
+backend/.codex/
+backend/.serena/
+backend/graphify-out/
+backend/task/
+backend/docs/
+backend/AGENTS.md
+backend/Agentes.md
+.obsidian/
