@@ -9,8 +9,8 @@ services:
     env_file:
       - .env
     environment:
-      - PORT=${PORT:-3333}
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-fit_ia_db}
+      - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}
     ports:
       - "${PORT:-3333}:3333"
     volumes:
