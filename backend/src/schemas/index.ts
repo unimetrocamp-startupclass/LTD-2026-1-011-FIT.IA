@@ -1,19 +1,8 @@
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat.js";
-import utc from "dayjs/plugin/utc.js";
 import z from "zod";
 
 import { WeekDay } from "../generated/prisma/enums.js";
 
-dayjs.extend(customParseFormat);
-dayjs.extend(utc);
-
-const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-const dateSchema = z
-  .string()
-  .regex(dateRegex)
-  .refine((date) => dayjs.utc(date, "YYYY-MM-DD", true).isValid());
-
+const dateSchema = z.iso.date();
 const positiveIntegerSchema = z.number().int().positive();
 const nonnegativeIntegerSchema = z.number().int().nonnegative();
 
@@ -106,7 +95,33 @@ export const ListWorkoutPlansResponseSchema = z.object({
   ),
 });
 
-export const ListWorkoutPlansSchema = ListWorkoutPlansResponseSchema;
+export const ListWorkoutPlansSchema = z.array(
+  z.object({
+    id: z.uuid(),
+    name: z.string(),
+    isActive: z.boolean(),
+    workoutDays: z.array(
+      z.object({
+        id: z.uuid(),
+        name: z.string(),
+        weekDay: z.enum(WeekDay),
+        isRest: z.boolean(),
+        estimatedDurationInSeconds: z.number(),
+        coverImageUrl: z.url().optional(),
+        exercises: z.array(
+          z.object({
+            id: z.uuid(),
+            order: z.number(),
+            name: z.string(),
+            sets: z.number(),
+            reps: z.number(),
+            restTimeInSeconds: z.number(),
+          }),
+        ),
+      }),
+    ),
+  }),
+);
 
 export const GetWorkoutPlanResponseSchema = z.object({
   id: z.uuid(),
@@ -133,8 +148,8 @@ export const GetWorkoutDayResponseSchema = z.object({
     z.object({
       id: z.uuid(),
       workoutDayId: z.uuid(),
-      startedAt: dateSchema,
-      completedAt: dateSchema.optional(),
+      startedAt: z.iso.date().optional(),
+      completedAt: z.iso.date().optional(),
     }),
   ),
 });
@@ -175,7 +190,7 @@ export const HomeParamsSchema = z.object({
 });
 
 export const HomeResponseSchema = z.object({
-  activeWorkoutPlanId: z.uuid(),
+  activeWorkoutPlanId: z.uuid().optional(),
   todayWorkoutDay: z
     .object({
       workoutPlanId: z.uuid(),
@@ -209,24 +224,32 @@ export const StatsResponseSchema = z.object({
 
 export const StatsSchema = StatsResponseSchema;
 
-export const UserTrainDataBodySchema = z.object({
-  weightInGrams: positiveIntegerSchema,
-  heightInCentimeters: positiveIntegerSchema,
-  age: positiveIntegerSchema,
-  bodyFatPercentage: nonnegativeIntegerSchema.max(100),
+export const UpsertUserTrainDataBodySchema = z.object({
+  weightInGrams: z.number().min(0),
+  heightInCentimeters: z.number().min(0),
+  age: z.number().min(0),
+  bodyFatPercentage: z.number().min(0).max(100),
 });
 
-export const UserTrainDataResponseSchema = UserTrainDataBodySchema.extend({
+export const UserTrainDataBodySchema = UpsertUserTrainDataBodySchema;
+
+export const UserTrainDataResponseSchema = z.object({
   userId: z.string(),
   userName: z.string(),
+  weightInGrams: z.number(),
+  heightInCentimeters: z.number(),
+  age: z.number(),
+  bodyFatPercentage: z.number().min(0).max(100),
 });
-
-export const UpsertUserTrainDataBodySchema = UserTrainDataBodySchema;
 
 export const UserTrainDataSchema = UserTrainDataResponseSchema;
 
-export const UpsertUserTrainDataSchema = UserTrainDataBodySchema.extend({
+export const UpsertUserTrainDataSchema = z.object({
   userId: z.string(),
+  weightInGrams: z.number(),
+  heightInCentimeters: z.number(),
+  age: z.number(),
+  bodyFatPercentage: z.number(),
 });
 
 export const WorkoutExerciseInputSchema = z.object({

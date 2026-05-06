@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat.js";
 import utc from "dayjs/plugin/utc.js";
 
-import { NotFoundError, ValidationError } from "../erros/index.js";
+import { ValidationError } from "../erros/index.js";
 import { WeekDay } from "../generated/prisma/enums.js";
 import { prisma } from "../lib/db.js";
 
@@ -25,7 +25,7 @@ interface InputDto {
 }
 
 interface OutputDto {
-  activeWorkoutPlanId: string;
+  activeWorkoutPlanId?: string;
   todayWorkoutDay?: {
     workoutPlanId: string;
     id: string;
@@ -91,7 +91,12 @@ export class GetHome {
     });
 
     if (!workoutPlan) {
-      throw new NotFoundError("Active workout plan not found");
+      return {
+        activeWorkoutPlanId: undefined,
+        todayWorkoutDay: undefined,
+        workoutStreak: 0,
+        consistencyByDay: this.buildEmptyConsistency(currentDate),
+      };
     }
 
     const workoutDaysByWeekDay = this.buildWorkoutDaysByWeekDay(
@@ -141,17 +146,15 @@ export class GetHome {
     });
     const completedDates = new Set(
       workoutSessions
-        .filter(
-          (session) => {
-            const sessionStartedAt = dayjs.utc(session.startedAt);
+        .filter((session) => {
+          const sessionStartedAt = dayjs.utc(session.startedAt);
 
-            return (
-              session.completedAt !== null &&
-              sessionStartedAt.valueOf() >= streakStart.valueOf() &&
-              sessionStartedAt.valueOf() <= streakEnd.valueOf()
-            );
-          },
-        )
+          return (
+            session.completedAt !== null &&
+            sessionStartedAt.valueOf() >= streakStart.valueOf() &&
+            sessionStartedAt.valueOf() <= streakEnd.valueOf()
+          );
+        })
         .map((session) => this.formatDateKey(session.startedAt)),
     );
     const workoutStreak = this.calculateStreak(
@@ -186,6 +189,24 @@ export class GetHome {
     return new Map(
       workoutDays.map((workoutDay) => [workoutDay.weekDay, workoutDay]),
     );
+  }
+
+  private buildEmptyConsistency(
+    currentDate: dayjs.Dayjs,
+  ): OutputDto["consistencyByDay"] {
+    const weekStart = currentDate.startOf("week");
+    const consistencyByDay: OutputDto["consistencyByDay"] = {};
+
+    for (let dayOffset = 0; dayOffset < 7; dayOffset++) {
+      const dateKey = weekStart.add(dayOffset, "day").format("YYYY-MM-DD");
+
+      consistencyByDay[dateKey] = {
+        workoutDayCompleted: false,
+        workoutDayStarted: false,
+      };
+    }
+
+    return consistencyByDay;
   }
 
   private groupSessionsByDate(
