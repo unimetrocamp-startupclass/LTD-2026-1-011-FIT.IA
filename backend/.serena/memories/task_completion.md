@@ -1,1 +1,0 @@
-For backend changes, run `pnpm exec tsc --noEmit` at minimum. If Prisma schema changes, run `pnpm exec prisma generate`; create a migration with `pnpm exec prisma migrate dev --name <name>` when database schema needs to change. There is no test script in package.json yet.
