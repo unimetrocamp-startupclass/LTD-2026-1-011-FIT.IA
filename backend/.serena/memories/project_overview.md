@@ -1,1 +1,0 @@
-Backend for FitIA, a Node.js/Fastify API written in TypeScript. Uses Fastify 5, Zod schemas via fastify-type-provider-zod, Better Auth for sessions, Prisma 7 with PostgreSQL and generated client output in src/generated/prisma. Main source is under src, Prisma schema/migrations under prisma, generated Prisma client under src/generated/prisma.
