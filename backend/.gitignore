@@ -2,4 +2,12 @@ node_modules
 /src/generated/prisma
 .env
 .pnpm-store
-./dist
+dist/
+task/
+docs/
+.serena/
+.codex/
+graphify-out/
+../.obsidian/
+AGENTS.md
+Agentes.md
