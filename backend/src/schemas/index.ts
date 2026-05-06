@@ -226,3 +226,33 @@ export const UserTrainDataSchema = UserTrainDataResponseSchema;
 export const UpsertUserTrainDataSchema = UserTrainDataBodySchema.extend({
   userId: z.string(),
 });
+
+export const WorkoutExerciseInputSchema = z.object({
+  order: z.number().int().nonnegative().describe("Ordem do exercício no dia"),
+  name: z.string().trim().min(1).describe("Nome do exercício"),
+  sets: z.number().int().positive().describe("Número de séries"),
+  reps: z.number().int().positive().describe("Número de repetições"),
+  restTimeInSeconds: z
+    .number()
+    .int()
+    .positive()
+    .describe("Tempo de descanso entre séries em segundos"),
+});
+
+export const WorkoutDayInputSchema = z.object({
+  name: z.string().trim().min(1).describe("Nome do dia"),
+  weekDay: z.enum(WeekDay).describe("Dia da semana"),
+  isRest: z.boolean().describe("Se é dia de descanso"),
+  estimatedDurationInSeconds: z
+    .number()
+    .int()
+    .nonnegative()
+    .describe("Duração estimada em segundos; 0 para dias de descanso"),
+  coverImageUrl: z
+    .string()
+    .url()
+    .describe("URL da imagem de capa conforme o foco muscular do dia"),
+  exercises: z
+    .array(WorkoutExerciseInputSchema)
+    .describe("Lista de exercícios; vazia para dias de descanso"),
+});
