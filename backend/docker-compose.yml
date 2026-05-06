@@ -1,18 +1,17 @@
 services:
   app:
-    build: .
+    build:
+      context: .
+      target: development
     container_name: fitia-app
-    command: >
-      sh -c "pnpm exec prisma generate &&
-             pnpm exec prisma migrate deploy &&
-             pnpm run dev"
     env_file:
       - .env
     environment:
-      - PORT=${PORT:-3333}
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-fit_ia_db}
+      - NODE_ENV=development
+      - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}
     ports:
-      - "${PORT:-3333}:3333"
+      - "${PORT}:${PORT}"
     volumes:
       - .:/app
       - /app/node_modules
@@ -27,15 +26,15 @@ services:
     env_file:
       - .env
     environment:
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - POSTGRES_DB=${POSTGRES_DB:-fit_ia_db}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     ports:
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5

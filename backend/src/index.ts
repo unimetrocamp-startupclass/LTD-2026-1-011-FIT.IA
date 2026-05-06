@@ -13,6 +13,7 @@ import {
 import z from "zod";
 
 import { auth } from "./lib/auth.js";
+import { env } from "./lib/env.js";
 import { aiRoutes } from "./routes/ai.js";
 import { homeRoutes } from "./routes/home.js";
 import { meRoutes } from "./routes/me.js";
@@ -116,10 +117,24 @@ pnpm run dev
 | \`POSTGRES_PASSWORD\` | Senha do postgres (docker compose) | \`postgres\` | Docker |
 | \`POSTGRES_DB\` | Nome do banco (docker compose) | \`fit_ia_db\` | Docker |
 | \`BETTER_AUTH_SECRET\` | Segredo do Better Auth | — | Sim (auth) |
-| \`BETTER_AUTH_URL\` | URL base da API | \`http://localhost:3333\` | Sim (auth) |`;
+`
+
+const envToLogger = {
+  development: {
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        translateTime: 'HH:MM:ss Z',
+        ignore: 'pid,hostname',
+      },
+    },
+  },
+  production: true,
+  test: false,
+}
 
 const app = Fastify({
-  logger: true,
+  logger: envToLogger[env.NODE_ENV],
 });
 
 app.setSerializerCompiler(serializerCompiler);
@@ -135,8 +150,8 @@ await app.register(fastifySwagger, {
     },
     servers: [
       {
-        description: "Localhost",
-        url: "http://localhost:3333",
+        description: "Api Base Url",
+        url: env.API_BASE_URL,
       },
     ],
   },
@@ -144,7 +159,7 @@ await app.register(fastifySwagger, {
 });
 
 await app.register(fastifyCors, {
-  origin: ["http://localhost:3000"],
+  origin: [env.WEB_APP_BASE_URL],
   credentials: true,
 });
 
@@ -208,6 +223,9 @@ app.withTypeProvider<ZodTypeProvider>().route({
 app.route({
   method: ["GET", "POST"],
   url: "/api/auth/*",
+  schema: {
+    hide: true,
+  },
   async handler(request, reply) {
     try {
       // Construct request URL
@@ -246,7 +264,7 @@ app.get("/health", () => {
 
 try {
   await app.listen({
-    port: Number(process.env.PORT) || 3333,
+    port: env.PORT,
     host: "0.0.0.0",
   });
 } catch (err) {
