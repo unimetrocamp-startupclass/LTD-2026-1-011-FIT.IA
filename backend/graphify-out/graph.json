@@ -44,7 +44,7 @@
       "source_file": "eslint.config.js",
       "source_location": "L1",
       "id": "eslint_config_js",
-      "community": 13,
+      "community": 12,
       "norm_label": "eslint.config.js"
     },
     {
@@ -53,7 +53,7 @@
       "source_file": "prisma.config.ts",
       "source_location": "L1",
       "id": "prisma_config_ts",
-      "community": 7,
+      "community": 6,
       "norm_label": "prisma.config.ts"
     },
     {
@@ -62,7 +62,7 @@
       "source_file": "src/index.ts",
       "source_location": "L1",
       "id": "src_index_ts",
-      "community": 6,
+      "community": 7,
       "norm_label": "index.ts"
     },
     {
@@ -71,7 +71,7 @@
       "source_file": "src/index.ts",
       "source_location": "L23",
       "id": "src_index_buildapidescription",
-      "community": 6,
+      "community": 7,
       "norm_label": "buildapidescription()"
     },
     {
@@ -80,7 +80,7 @@
       "source_file": "src/index.ts",
       "source_location": "L229",
       "id": "src_index_handler",
-      "community": 6,
+      "community": 7,
       "norm_label": "handler()"
     },
     {
@@ -188,7 +188,7 @@
       "source_file": "src/generated/prisma/browser.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_browser_ts",
-      "community": 12,
+      "community": 11,
       "norm_label": "browser.ts"
     },
     {
@@ -269,7 +269,7 @@
       "source_file": "src/generated/prisma/internal/prismaNamespaceBrowser.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_internal_prismanamespacebrowser_ts",
-      "community": 12,
+      "community": 11,
       "norm_label": "prismanamespacebrowser.ts"
     },
     {
@@ -350,7 +350,7 @@
       "source_file": "src/lib/auth.ts",
       "source_location": "L1",
       "id": "src_lib_auth_ts",
-      "community": 7,
+      "community": 6,
       "norm_label": "auth.ts"
     },
     {
@@ -359,7 +359,7 @@
       "source_file": "src/lib/db.ts",
       "source_location": "L1",
       "id": "src_lib_db_ts",
-      "community": 7,
+      "community": 6,
       "norm_label": "db.ts"
     },
     {
@@ -368,7 +368,7 @@
       "source_file": "src/lib/env.ts",
       "source_location": "L1",
       "id": "src_lib_env_ts",
-      "community": 7,
+      "community": 6,
       "norm_label": "env.ts"
     },
     {
@@ -386,7 +386,7 @@
       "source_file": "src/routes/ai.ts",
       "source_location": "L79",
       "id": "routes_ai_airoutes",
-      "community": 6,
+      "community": 7,
       "norm_label": "airoutes()"
     },
     {
@@ -395,7 +395,7 @@
       "source_file": "src/routes/home.ts",
       "source_location": "L1",
       "id": "src_routes_home_ts",
-      "community": 4,
+      "community": 9,
       "norm_label": "home.ts"
     },
     {
@@ -404,7 +404,7 @@
       "source_file": "src/routes/home.ts",
       "source_location": "L14",
       "id": "routes_home_homeroutes",
-      "community": 10,
+      "community": 9,
       "norm_label": "homeroutes()"
     },
     {
@@ -413,7 +413,7 @@
       "source_file": "src/routes/me.ts",
       "source_location": "L1",
       "id": "src_routes_me_ts",
-      "community": 9,
+      "community": 5,
       "norm_label": "me.ts"
     },
     {
@@ -422,7 +422,7 @@
       "source_file": "src/routes/me.ts",
       "source_location": "L16",
       "id": "routes_me_meroutes",
-      "community": 6,
+      "community": 7,
       "norm_label": "meroutes()"
     },
     {
@@ -440,7 +440,7 @@
       "source_file": "src/routes/stats.ts",
       "source_location": "L14",
       "id": "routes_stats_statsroutes",
-      "community": 6,
+      "community": 7,
       "norm_label": "statsroutes()"
     },
     {
@@ -467,7 +467,7 @@
       "source_file": "src/schemas/index.ts",
       "source_location": "L1",
       "id": "src_schemas_index_ts",
-      "community": 10,
+      "community": 9,
       "norm_label": "index.ts"
     },
     {
@@ -827,7 +827,7 @@
       "source_file": "src/usecases/UpsertUserTrainData.ts",
       "source_location": "L1",
       "id": "src_usecases_upsertusertraindata_ts",
-      "community": 9,
+      "community": 5,
       "norm_label": "upsertusertraindata.ts"
     },
     {
@@ -836,7 +836,7 @@
       "source_file": "src/usecases/UpsertUserTrainData.ts",
       "source_location": "L20",
       "id": "usecases_upsertusertraindata_upsertusertraindata",
-      "community": 9,
+      "community": 5,
       "norm_label": "upsertusertraindata"
     },
     {
@@ -845,7 +845,7 @@
       "source_file": "src/usecases/UpsertUserTrainData.ts",
       "source_location": "L21",
       "id": "usecases_upsertusertraindata_upsertusertraindata_execute",
-      "community": 9,
+      "community": 5,
       "norm_label": ".execute()"
     },
     {
@@ -916,7 +916,7 @@
       "file_type": "code",
       "source_file": "src/usecases/UpsertUserTrainData.ts",
       "source_location": "L20",
-      "community": 5,
+      "community": 4,
       "norm_label": "upsertusertraindata",
       "id": "usecases_upsert_user_train_data_upsertusertraindata"
     },
@@ -925,7 +925,7 @@
       "file_type": "code",
       "source_file": "src/usecases/UpsertUserTrainData.ts",
       "source_location": "L21",
-      "community": 5,
+      "community": 4,
       "norm_label": ".execute()",
       "id": "usecases_upsert_user_train_data_upsertusertraindata_execute"
     },
@@ -934,7 +934,7 @@
       "file_type": "code",
       "source_file": "src/usecases/get-user-train-data.ts",
       "source_location": "L1",
-      "community": 5,
+      "community": 6,
       "norm_label": "getusertraindata.ts",
       "id": "c_work_fitia_backend_src_usecases_getusertraindata_ts"
     },
@@ -943,7 +943,7 @@
       "file_type": "code",
       "source_file": "src/usecases/upsert-user-train-data.ts",
       "source_location": "L1",
-      "community": 5,
+      "community": 4,
       "norm_label": "upsert-user-train-data.ts",
       "id": "src_usecases_upsert_user_train_data_ts"
     },
@@ -956,7 +956,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 11,
+      "community": 10,
       "norm_label": "graph_report.md",
       "id": "graphify_report"
     },
@@ -969,7 +969,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 11,
+      "community": 10,
       "norm_label": "graphify query commands",
       "id": "graphify_query"
     },
@@ -982,7 +982,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 11,
+      "community": 10,
       "norm_label": "graphify workflow",
       "id": "agents_graphify_workflow"
     },
@@ -995,7 +995,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "app service",
       "id": "docker_compose_app_service"
     },
@@ -1008,7 +1008,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "postgres service",
       "id": "docker_compose_postgres_service"
     },
@@ -1060,7 +1060,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 10,
+      "community": 9,
       "norm_label": "home api route task",
       "id": "task03_home_api"
     },
@@ -3919,5 +3919,5 @@
       "source_file": "task/03.md"
     }
   ],
-  "built_at_commit": "9376bbcbe265825646f7eaa955620199065076b6"
+  "built_at_commit": "fcf71d79b9c044261af6fcfba1cb3930cbfd4700"
 }
