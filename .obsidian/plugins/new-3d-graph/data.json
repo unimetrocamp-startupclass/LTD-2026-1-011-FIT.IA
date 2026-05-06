@@ -128,7 +128,7 @@
   "rotateSpeed": 1.4,
   "panSpeed": 1.4,
   "zoomSpeed": 1.4,
-  "centerForce": 0,
-  "repelForce": 6,
-  "linkForce": 0.019
+  "centerForce": 1,
+  "repelForce": 3.7,
+  "linkForce": 0.003
 }

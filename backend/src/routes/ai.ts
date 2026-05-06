@@ -1,4 +1,4 @@
-import { openai } from "@ai-sdk/openai";
+import { google } from "@ai-sdk/google";
 import {
   convertToModelMessages,
   stepCountIs,
@@ -12,9 +12,11 @@ import { ZodTypeProvider } from "fastify-type-provider-zod";
 import z from "zod";
 
 import { ValidationError } from "../erros/index.js";
-import { WeekDay } from "../generated/prisma/enums.js";
 import { auth } from "../lib/auth.js";
-import { UserTrainDataBodySchema } from "../schemas/index.js";
+import {
+  UserTrainDataBodySchema,
+  WorkoutDayInputSchema,
+} from "../schemas/index.js";
 import { CreateWorkoutPlan } from "../usecases/CreateWorkoutPlan.js";
 import { GetUserTrainData } from "../usecases/GetUserTrainData.js";
 import { ListWorkoutPlans } from "../usecases/ListWorkoutPlans.js";
@@ -74,36 +76,6 @@ Dias majoritariamente inferiores (pernas, glúteos, quadríceps, posterior, pant
 
 Alterne entre as duas opções de cada categoria para variar. Dias de descanso usam imagem de superior.`;
 
-const workoutExerciseInputSchema = z.object({
-  order: z.number().int().nonnegative().describe("Ordem do exercício no dia"),
-  name: z.string().trim().min(1).describe("Nome do exercício"),
-  sets: z.number().int().positive().describe("Número de séries"),
-  reps: z.number().int().positive().describe("Número de repetições"),
-  restTimeInSeconds: z
-    .number()
-    .int()
-    .positive()
-    .describe("Tempo de descanso entre séries em segundos"),
-});
-
-const workoutDayInputSchema = z.object({
-  name: z.string().trim().min(1).describe("Nome do dia"),
-  weekDay: z.enum(WeekDay).describe("Dia da semana"),
-  isRest: z.boolean().describe("Se é dia de descanso"),
-  estimatedDurationInSeconds: z
-    .number()
-    .int()
-    .nonnegative()
-    .describe("Duração estimada em segundos; 0 para dias de descanso"),
-  coverImageUrl: z
-    .string()
-    .url()
-    .describe("URL da imagem de capa conforme o foco muscular do dia"),
-  exercises: z
-    .array(workoutExerciseInputSchema)
-    .describe("Lista de exercícios; vazia para dias de descanso"),
-});
-
 export const aiRoutes = async (app: FastifyInstance) => {
   app.withTypeProvider<ZodTypeProvider>().route({
     method: "POST",
@@ -124,7 +96,7 @@ export const aiRoutes = async (app: FastifyInstance) => {
       const userId = session.user.id;
       const { messages } = request.body as { messages: UIMessage[] };
       const result = streamText({
-        model: openai("gpt-4o-mini"),
+        model: google("gemini-2.5-flash"),
         system: SYSTEM_PROMPT,
         messages: await convertToModelMessages(messages),
         stopWhen: stepCountIs(5),
@@ -195,7 +167,7 @@ export const aiRoutes = async (app: FastifyInstance) => {
                 .min(1)
                 .describe("Nome do plano de treino"),
               workoutDays: z
-                .array(workoutDayInputSchema)
+                .array(WorkoutDayInputSchema)
                 .length(7)
                 .describe(
                   "Array com exatamente 7 dias de treino (MONDAY a SUNDAY)",

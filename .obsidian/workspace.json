@@ -194,6 +194,7 @@
   },
   "active": "ce1c2197abeeca55",
   "lastOpenFiles": [
+    "backend/node_modules/@ai-sdk",
     "backend/graphify-out/cache/ast/7d1f8607c406f428569892c24a679db1c42dc742a5bd49fd2607b54cf19323c7.json",
     "backend/graphify-out/cache/ast/7f2768ea24ad71ad2d13e6241ec0fcc6f8aadd0ccc8f6ca0c108d111994aa87f.json",
     "backend/graphify-out/cache/ast/45c05b29b34ec7e7c163dfd5919407213c283767b5c2765f33f550bad18ee6f4.json",
@@ -204,7 +205,6 @@
     "backend/graphify-out/cache/ast/ac12dc33b4a0a6c141e6dbb843ff34d88d79e549badb4392f66365994add7567.json",
     "backend/graphify-out/cache/ast/048b8b207162e9a5c81edf3bff43192ecbade4b5c9b4f7c5eef0ea9b4c36c8f9.json",
     "backend/graphify-out/cache/ast/78cabb7e7fd85d92ca85157cfe92a69f8cc24c36f6596b938880643217ae3ed5.json",
-    "backend/graphify-out/cache/ast/206dc29cad22cee63201eaff8b3c96ea1de3de714ccaeae2b4c505f8d0f801dc.json",
     "backend/graphify-out/obsidian/_COMMUNITY_Community 15.md",
     "backend/graphify-out/obsidian/_COMMUNITY_Community 14.md",
     "backend/graphify-out/obsidian/GetUserTrainData.md",
