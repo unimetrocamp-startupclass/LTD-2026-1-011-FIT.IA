@@ -385,10 +385,6 @@ As próximas evoluções podem ampliar a experiência do produto e melhorar a co
 | Média | Expandir métricas de evolução corporal e progressão de carga. |
 | Baixa | Adicionar badges de cobertura e status de deploy. |
 
-## Licença
-
-O `package.json` informa licença **ISC**. Caso o projeto acadêmico ou institucional exija outro modelo, recomenda-se adicionar um arquivo `LICENSE` na raiz do repositório.
-
 ## Referências
 
 [1]: https://github.com/unimetrocamp-startupclass/LTD-2026-1-011-FIT.IA "Repositório FIT.IA no GitHub"
