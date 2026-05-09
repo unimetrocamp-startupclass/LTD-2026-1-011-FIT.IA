@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { authClient } from "@/app/_lib/auth-client";
 import { getUserTrainData, getHomeData } from "@/app/_lib/api/fetch-generated";
+import { needsOnboarding } from "@/app/_lib/onboarding";
 import dayjs from "dayjs";
 import { BottomNav } from "@/app/_components/bottom-nav";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -26,10 +27,7 @@ export default async function ProfilePage() {
     throw new Error("Failed to fetch user train data");
   }
 
-  const needsOnboarding =
-    (homeData.status === 200 && !homeData.data.activeWorkoutPlanId) ||
-    !trainData.data;
-  if (needsOnboarding) redirect("/onboarding");
+  if (needsOnboarding(homeData, trainData)) redirect("/onboarding");
 
   const user = session.data.user;
   const data = trainData.data;

@@ -13,7 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SUGGESTED_MESSAGES = ["Monte meu plano de treino"];
 const CHAT_QUOTA_ERROR_MESSAGE =
@@ -48,6 +48,7 @@ interface ChatProps {
 }
 
 export function Chat({ embedded = false, initialMessage }: ChatProps) {
+  const router = useRouter();
   const [chatParams, setChatParams] = useQueryStates({
     chat_open: parseAsBoolean.withDefault(false),
     chat_initial_message: parseAsString,
@@ -116,6 +117,11 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
     setChatParams({ chat_open: false, chat_initial_message: null });
   };
 
+  const handleAccessApp = () => {
+    router.refresh();
+    router.push("/");
+  };
+
   const onSubmit = (values: ChatFormValues) => {
     setChatError(null);
     sendMessage({ text: values.message });
@@ -154,8 +160,8 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
           </div>
         </div>
         {embedded ? (
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/">Acessar FIT.AI</Link>
+          <Button variant="ghost" size="sm" onClick={handleAccessApp}>
+            Acessar FIT.AI
           </Button>
         ) : (
           <Button variant="ghost" size="icon" onClick={handleClose}>

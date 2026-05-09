@@ -1,7 +1,12 @@
 import { redirect } from "next/navigation";
 import { authClient } from "@/app/_lib/auth-client";
 import { headers } from "next/headers";
-import { getWorkoutDay, getHomeData, getUserTrainData } from "@/app/_lib/api/fetch-generated";
+import {
+  getWorkoutDay,
+  getHomeData,
+  getUserTrainData,
+} from "@/app/_lib/api/fetch-generated";
+import { needsOnboarding } from "@/app/_lib/onboarding";
 import dayjs from "dayjs";
 import Image from "next/image";
 import { Calendar, Timer, Dumbbell } from "lucide-react";
@@ -52,10 +57,7 @@ export default async function WorkoutDayPage({
     getUserTrainData(),
   ]);
 
-  const needsOnboarding =
-    (homeData.status === 200 && !homeData.data.activeWorkoutPlanId) ||
-    (trainData.status === 200 && !trainData.data);
-  if (needsOnboarding) redirect("/onboarding");
+  if (needsOnboarding(homeData, trainData)) redirect("/onboarding");
 
   if (workoutDayData.status !== 200) redirect("/");
 
@@ -70,9 +72,7 @@ export default async function WorkoutDayPage({
 
   const durationInMinutes = Math.round(estimatedDurationInSeconds / 60);
 
-  const inProgressSession = sessions.find(
-    (s) => s.startedAt && !s.completedAt,
-  );
+  const inProgressSession = sessions.find((s) => s.startedAt && !s.completedAt);
   const completedSession = sessions.find((s) => s.completedAt);
   const hasInProgressSession = !!inProgressSession;
   const hasCompletedSession = !!completedSession;

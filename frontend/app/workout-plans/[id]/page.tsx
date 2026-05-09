@@ -1,7 +1,12 @@
 import { redirect } from "next/navigation";
 import { authClient } from "@/app/_lib/auth-client";
 import { headers } from "next/headers";
-import { getWorkoutPlan, getHomeData, getUserTrainData } from "@/app/_lib/api/fetch-generated";
+import {
+  getWorkoutPlan,
+  getHomeData,
+  getUserTrainData,
+} from "@/app/_lib/api/fetch-generated";
+import { needsOnboarding } from "@/app/_lib/onboarding";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,10 +46,7 @@ export default async function WorkoutPlanPage({
     getUserTrainData(),
   ]);
 
-  const needsOnboarding =
-    (homeData.status === 200 && !homeData.data.activeWorkoutPlanId) ||
-    (trainData.status === 200 && !trainData.data);
-  if (needsOnboarding) redirect("/onboarding");
+  if (needsOnboarding(homeData, trainData)) redirect("/onboarding");
 
   if (workoutPlanData.status !== 200) redirect("/");
 
@@ -100,10 +102,7 @@ export default async function WorkoutPlanPage({
           day.isRest ? (
             <RestDayCard key={day.id} weekDay={day.weekDay} />
           ) : (
-            <Link
-              key={day.id}
-              href={`/workout-plans/${id}/days/${day.id}`}
-            >
+            <Link key={day.id} href={`/workout-plans/${id}/days/${day.id}`}>
               <WorkoutDayCard
                 name={day.name}
                 weekDay={day.weekDay}

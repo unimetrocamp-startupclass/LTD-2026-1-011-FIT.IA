@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { authClient } from "@/app/_lib/auth-client";
 import { headers } from "next/headers";
 import { getHomeData, getUserTrainData } from "./_lib/api/fetch-generated";
+import { needsOnboarding } from "./_lib/onboarding";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,10 +30,7 @@ export default async function Home() {
     throw new Error("Failed to fetch home data");
   }
 
-  const needsOnboarding =
-    !homeData.data.activeWorkoutPlanId ||
-    (trainData.status === 200 && !trainData.data);
-  if (needsOnboarding) redirect("/onboarding");
+  if (needsOnboarding(homeData, trainData)) redirect("/onboarding");
 
   const { todayWorkoutDay, workoutStreak, consistencyByDay } = homeData.data;
   const userName = session.data.user.name?.split(" ")[0] ?? "";

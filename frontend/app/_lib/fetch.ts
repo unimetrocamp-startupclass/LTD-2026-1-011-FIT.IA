@@ -20,7 +20,7 @@ const getHeaders = async (headers?: HeadersInit): Promise<HeadersInit> => {
 
 export const customFetch = async <T>(
   url: string,
-  options: RequestInit
+  options: RequestInit,
 ): Promise<T> => {
   const requestUrl = getUrl(url);
   const requestHeaders = await getHeaders(options.headers);
@@ -29,6 +29,7 @@ export const customFetch = async <T>(
     ...options,
     headers: requestHeaders,
     credentials: "include",
+    cache: options.cache ?? "no-store",
   };
 
   const response = await fetch(requestUrl, requestInit);

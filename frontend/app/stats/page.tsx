@@ -1,7 +1,12 @@
 import { redirect } from "next/navigation";
 import { authClient } from "@/app/_lib/auth-client";
 import { headers } from "next/headers";
-import { getStats, getHomeData, getUserTrainData } from "@/app/_lib/api/fetch-generated";
+import {
+  getStats,
+  getHomeData,
+  getUserTrainData,
+} from "@/app/_lib/api/fetch-generated";
+import { needsOnboarding } from "@/app/_lib/onboarding";
 import dayjs from "dayjs";
 import { CircleCheck, CirclePercent, Hourglass } from "lucide-react";
 import { BottomNav } from "@/app/_components/bottom-nav";
@@ -34,10 +39,7 @@ export default async function StatsPage() {
     getUserTrainData(),
   ]);
 
-  const needsOnboarding =
-    (homeData.status === 200 && !homeData.data.activeWorkoutPlanId) ||
-    (trainData.status === 200 && !trainData.data);
-  if (needsOnboarding) redirect("/onboarding");
+  if (needsOnboarding(homeData, trainData)) redirect("/onboarding");
 
   if (statsResponse.status !== 200) {
     throw new Error("Failed to fetch stats");
