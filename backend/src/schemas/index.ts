@@ -291,6 +291,7 @@ export const WorkoutExerciseInputSchema = z.object({
     .number()
     .int()
     .positive()
+    .default(90)
     .describe("Tempo de descanso entre séries em segundos"),
 });
 
