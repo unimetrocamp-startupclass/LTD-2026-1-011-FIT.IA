@@ -1,6 +1,8 @@
 import { google } from "@ai-sdk/google";
 import {
+  APICallError,
   convertToModelMessages,
+  RetryError,
   stepCountIs,
   streamText,
   tool,
@@ -21,6 +23,9 @@ import { CreateWorkoutPlan } from "../usecases/CreateWorkoutPlan.js";
 import { GetUserTrainData } from "../usecases/GetUserTrainData.js";
 import { ListWorkoutPlans } from "../usecases/ListWorkoutPlans.js";
 import { UpsertUserTrainData } from "../usecases/UpsertUserTrainData.js";
+
+const AI_QUOTA_ERROR_MESSAGE =
+  "O limite de uso da IA foi atingido agora. Aguarde alguns instantes e tente novamente.";
 
 const SYSTEM_PROMPT = `Você é um personal trainer virtual especialista em montagem de planos de treino personalizados.
 
@@ -77,6 +82,51 @@ Dias majoritariamente inferiores (pernas, glúteos, quadríceps, posterior, pant
 
 Alterne entre as duas opções de cada categoria para variar. Dias de descanso usam imagem de superior.`;
 
+const stringifyErrorData = (data: unknown) => {
+  try {
+    return JSON.stringify(data);
+  } catch {
+    return "";
+  }
+};
+
+const getApiCallError = (error: unknown) => {
+  if (APICallError.isInstance(error)) {
+    return error;
+  }
+
+  if (RetryError.isInstance(error) && APICallError.isInstance(error.lastError)) {
+    return error.lastError;
+  }
+
+  return null;
+};
+
+const isQuotaError = (error: unknown) => {
+  const apiError = getApiCallError(error);
+  const message = error instanceof Error ? error.message : "";
+  const errorText = [
+    message,
+    apiError?.message,
+    apiError?.responseBody,
+    stringifyErrorData(apiError?.data),
+  ].join(" ");
+
+  return (
+    apiError?.statusCode === 429 ||
+    errorText.includes("RESOURCE_EXHAUSTED") ||
+    /quota|rate.?limit/i.test(errorText)
+  );
+};
+
+const getAIStreamErrorMessage = (error: unknown) => {
+  if (isQuotaError(error)) {
+    return AI_QUOTA_ERROR_MESSAGE;
+  }
+
+  return "Não consegui concluir a resposta agora. Tente novamente em instantes.";
+};
+
 export const aiRoutes = async (app: FastifyInstance) => {
   app.withTypeProvider<ZodTypeProvider>().route({
     method: "POST",
@@ -100,6 +150,7 @@ export const aiRoutes = async (app: FastifyInstance) => {
         model: google("gemini-2.5-flash"),
         system: SYSTEM_PROMPT,
         messages: await convertToModelMessages(messages),
+        maxRetries: 0,
         stopWhen: stepCountIs(10),
         tools: {
           getUserTrainData: tool({
@@ -186,7 +237,17 @@ export const aiRoutes = async (app: FastifyInstance) => {
         },
       });
 
-      const response = result.toUIMessageStreamResponse();
+      const response = result.toUIMessageStreamResponse({
+        onError: (error) => {
+          if (isQuotaError(error)) {
+            app.log.warn({ error }, "AI quota exceeded");
+          } else {
+            app.log.error({ error }, "AI stream failed");
+          }
+
+          return getAIStreamErrorMessage(error);
+        },
+      });
       reply.status(response.status);
       response.headers.forEach((value, key) => reply.header(key, value));
       return reply.send(response.body);
