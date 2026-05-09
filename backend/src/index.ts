@@ -135,6 +135,9 @@ const envToLogger = {
 
 const app = Fastify({
   logger: envToLogger[env.NODE_ENV],
+  routerOptions: {
+    ignoreTrailingSlash: true,
+  },
 });
 
 app.setSerializerCompiler(serializerCompiler);
