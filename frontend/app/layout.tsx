@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Anton, Geist, Geist_Mono, Inter_Tight } from "next/font/google";
+import { Anton, Poppins, JetBrains_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Chat } from "@/app/_components/chat";
 import "./globals.css";
 
-const geistSans = Geist({
+const poppins = Poppins({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const interTight = Inter_Tight({
+const interTight = Poppins({
   variable: "--font-inter-tight",
   subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 const anton = Anton({
@@ -37,9 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable} ${anton.variable} antialiased`}
+        className={`${poppins.variable} ${jetbrainsMono.variable} ${interTight.variable} ${anton.variable} antialiased`}
+        suppressHydrationWarning
       >
         <NuqsAdapter>
           {children}

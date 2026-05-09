@@ -590,7 +590,7 @@ export type getUserTrainDataResponse =
   | getUserTrainDataResponseError;
 
 export const getGetUserTrainDataUrl = () => {
-  return `/me/`;
+  return `/me`;
 };
 
 export const getUserTrainData = async (
@@ -636,7 +636,7 @@ export type upsertUserTrainDataResponse =
   | upsertUserTrainDataResponseError;
 
 export const getUpsertUserTrainDataUrl = () => {
-  return `/me/`;
+  return `/me`;
 };
 
 export const upsertUserTrainData = async (

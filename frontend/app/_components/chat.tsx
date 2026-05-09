@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useQueryStates, parseAsBoolean, parseAsString } from "nuqs";
@@ -16,6 +16,25 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 const SUGGESTED_MESSAGES = ["Monte meu plano de treino"];
+const CHAT_QUOTA_ERROR_MESSAGE =
+  "O limite de uso da IA foi atingido agora. Aguarde alguns instantes e tente novamente.";
+const DEFAULT_CHAT_ERROR_MESSAGE =
+  "Não consegui concluir a resposta agora. Tente novamente em instantes.";
+
+const getChatErrorMessage = (error: Error) => {
+  if (
+    error.message === CHAT_QUOTA_ERROR_MESSAGE ||
+    error.message === DEFAULT_CHAT_ERROR_MESSAGE
+  ) {
+    return error.message;
+  }
+
+  if (/429|quota|rate.?limit|RESOURCE_EXHAUSTED/i.test(error.message)) {
+    return CHAT_QUOTA_ERROR_MESSAGE;
+  }
+
+  return DEFAULT_CHAT_ERROR_MESSAGE;
+};
 
 const chatFormSchema = z.object({
   message: z.string().min(1),
@@ -33,12 +52,16 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
     chat_open: parseAsBoolean.withDefault(false),
     chat_initial_message: parseAsString,
   });
+  const [chatError, setChatError] = useState<string | null>(null);
 
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: `${process.env.NEXT_PUBLIC_API_URL}/ai`,
       credentials: "include",
     }),
+    onError: (error) => {
+      setChatError(getChatErrorMessage(error));
+    },
   });
 
   const form = useForm<ChatFormValues>({
@@ -52,6 +75,7 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
   useEffect(() => {
     if (embedded && initialMessage && !initialMessageSentRef.current) {
       initialMessageSentRef.current = true;
+      setChatError(null);
       sendMessage({ text: initialMessage });
     }
   }, [embedded, initialMessage, sendMessage]);
@@ -64,6 +88,7 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
       !initialMessageSentRef.current
     ) {
       initialMessageSentRef.current = true;
+      setChatError(null);
       sendMessage({ text: chatParams.chat_initial_message });
       setChatParams({ chat_initial_message: null });
     }
@@ -83,7 +108,7 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [chatError, messages]);
 
   if (!embedded && !chatParams.chat_open) return null;
 
@@ -92,11 +117,13 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
   };
 
   const onSubmit = (values: ChatFormValues) => {
+    setChatError(null);
     sendMessage({ text: values.message });
     form.reset();
   };
 
   const handleSuggestion = (text: string) => {
+    setChatError(null);
     sendMessage({ text });
   };
 
@@ -122,9 +149,7 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
             </span>
             <div className="flex items-center gap-1">
               <div className="size-2 rounded-full bg-online" />
-              <span className="font-heading text-xs text-primary">
-                Online
-              </span>
+              <span className="font-heading text-xs text-primary">Online</span>
             </div>
           </div>
         </div>
@@ -169,15 +194,14 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
                     >
                       {part.text}
                     </Streamdown>
-                  ) : null
+                  ) : null,
                 )
               ) : (
                 <p className="font-heading text-sm leading-relaxed text-primary-foreground">
                   {message.parts
                     .filter((part) => part.type === "text")
                     .map(
-                      (part) =>
-                        (part as { type: "text"; text: string }).text
+                      (part) => (part as { type: "text"; text: string }).text,
                     )
                     .join("")}
                 </p>
@@ -185,6 +209,15 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
             </div>
           </div>
         ))}
+        {chatError && (
+          <div className="flex flex-col items-start pl-5 pr-[60px] pt-5">
+            <div className="rounded-xl border border-destructive/20 bg-destructive/10 p-3">
+              <p className="font-heading text-sm leading-relaxed text-foreground">
+                {chatError}
+              </p>
+            </div>
+          </div>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
