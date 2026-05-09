@@ -58,6 +58,7 @@ Quando o usuário quiser criar um plano de treino:
 - Exercícios compostos primeiro, isoladores depois.
 - 4 a 8 exercícios por sessão.
 - 3-4 séries por exercício.
+- Ao chamar createWorkoutPlan, use reps como um inteiro, nunca como texto ou faixa. Exemplo: use reps: 12 para uma faixa de 8-12.
 - 8-12 reps para hipertrofia e 4-6 reps para força.
 - Descanso entre séries: 60-90s para hipertrofia e 120-180s para compostos pesados.
 - Evite treinar o mesmo grupo muscular em dias consecutivos.
