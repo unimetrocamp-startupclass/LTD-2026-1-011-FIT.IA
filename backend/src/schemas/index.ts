@@ -30,7 +30,7 @@ const workoutDaySummarySchema = z.object({
   name: z.string(),
   isRest: z.boolean(),
   coverImageUrl: z.url().optional(),
-  estimatedDurationInSeconds: positiveIntegerSchema,
+  estimatedDurationInSeconds: nonnegativeIntegerSchema,
   exercisesCount: nonnegativeIntegerSchema,
 });
 
@@ -48,7 +48,7 @@ export const WorkoutPlanSchema = z.object({
       weekDay: z.enum(WeekDay),
       isRest: z.boolean().default(false),
       coverImageUrl: z.url().optional(),
-      estimatedDurationInSeconds: z.number().min(1),
+      estimatedDurationInSeconds: nonnegativeIntegerSchema,
       exercises: z.array(
         z.object({
           name: z.string().trim().min(1),
@@ -87,7 +87,7 @@ export const ListWorkoutPlansResponseSchema = z.object({
           isRest: z.boolean(),
           weekDay: z.enum(WeekDay),
           coverImageUrl: z.url().optional(),
-          estimatedDurationInSeconds: positiveIntegerSchema,
+          estimatedDurationInSeconds: nonnegativeIntegerSchema,
           exercises: z.array(workoutExerciseSchema),
         }),
       ),
@@ -141,7 +141,7 @@ export const GetWorkoutDayResponseSchema = z.object({
   name: z.string(),
   isRest: z.boolean(),
   coverImageUrl: z.url().optional(),
-  estimatedDurationInSeconds: positiveIntegerSchema,
+  estimatedDurationInSeconds: nonnegativeIntegerSchema,
   exercises: z.array(workoutExerciseSchema),
   weekDay: z.enum(WeekDay),
   sessions: z.array(
@@ -252,15 +252,46 @@ export const UpsertUserTrainDataSchema = z.object({
   bodyFatPercentage: z.number(),
 });
 
+const flexiblePositiveIntegerSchema = z
+  .union([z.number().int().positive(), z.string().trim().min(1)])
+  .transform((value, context) => {
+    if (typeof value === "number") {
+      return value;
+    }
+
+    const matches = value.match(/\d+/g);
+    if (!matches?.length) {
+      context.addIssue({
+        code: "custom",
+        message: "Expected a positive integer or a numeric range",
+      });
+      return z.NEVER;
+    }
+
+    const parsedValue = Number(matches.at(-1));
+    if (!Number.isInteger(parsedValue) || parsedValue <= 0) {
+      context.addIssue({
+        code: "custom",
+        message: "Expected a positive integer or a numeric range",
+      });
+      return z.NEVER;
+    }
+
+    return parsedValue;
+  });
+
 export const WorkoutExerciseInputSchema = z.object({
   order: z.number().int().nonnegative().describe("Ordem do exercício no dia"),
   name: z.string().trim().min(1).describe("Nome do exercício"),
-  sets: z.number().int().positive().describe("Número de séries"),
-  reps: z.number().int().positive().describe("Número de repetições"),
+  sets: flexiblePositiveIntegerSchema.describe("Numero de series"),
+  reps: flexiblePositiveIntegerSchema.describe(
+    "Numero de repeticoes. Se receber uma faixa como 8-12, sera salvo como 12.",
+  ),
   restTimeInSeconds: z
     .number()
     .int()
     .positive()
+    .default(90)
     .describe("Tempo de descanso entre séries em segundos"),
 });
 

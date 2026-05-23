@@ -47,10 +47,10 @@ export const meRoutes = async (app: FastifyInstance) => {
 
         return reply.status(200).send(result);
       } catch (error) {
-        app.log.error(error);
         if (error instanceof ValidationError) {
           return reply.status(200).send(null);
         }
+        app.log.error(error);
         if (error instanceof NotFoundError) {
           return reply.status(404).send({
             error: error.message,
