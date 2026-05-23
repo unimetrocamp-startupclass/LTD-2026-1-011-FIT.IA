@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: fitia-frontend
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm install -g pnpm && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+      - key: NEXT_PUBLIC_BASE_URL
+        sync: false
