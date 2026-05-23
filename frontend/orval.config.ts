@@ -26,7 +26,6 @@ export default defineConfig({
     output: {
       target: "./app/_lib/api/fetch-generated/index.ts",
       client: "fetch",
-      prettier: true,
       override: {
         mutator: {
           path: "./app/_lib/fetch.ts",
