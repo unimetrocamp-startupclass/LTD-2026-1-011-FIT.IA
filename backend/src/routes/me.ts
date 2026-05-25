@@ -1,9 +1,8 @@
-import { fromNodeHeaders } from "better-auth/node";
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 
 import { NotFoundError, ValidationError } from "../erros/index.js";
-import { auth } from "../lib/auth.js";
+import { authenticate } from "../middleware/authenticate.js";
 import {
   ErrorSchema,
   UpsertUserTrainDataBodySchema,
@@ -28,21 +27,12 @@ export const meRoutes = async (app: FastifyInstance) => {
         500: ErrorSchema,
       },
     },
+    preHandler: authenticate,
     handler: async (request, reply) => {
       try {
-        const session = await auth.api.getSession({
-          headers: fromNodeHeaders(request.headers),
-        });
-        if (!session) {
-          return reply.status(401).send({
-            error: "Unauthorized",
-            code: "UNAUTHORIZED",
-          });
-        }
-
         const getUserTrainData = new GetUserTrainData();
         const result = await getUserTrainData.execute({
-          userId: session.user.id,
+          userId: request.user.id,
         });
 
         return reply.status(200).send(result);
@@ -81,21 +71,12 @@ export const meRoutes = async (app: FastifyInstance) => {
         500: ErrorSchema,
       },
     },
+    preHandler: authenticate,
     handler: async (request, reply) => {
       try {
-        const session = await auth.api.getSession({
-          headers: fromNodeHeaders(request.headers),
-        });
-        if (!session) {
-          return reply.status(401).send({
-            error: "Unauthorized",
-            code: "UNAUTHORIZED",
-          });
-        }
-
         const upsertUserTrainData = new UpsertUserTrainData();
         const result = await upsertUserTrainData.execute({
-          userId: session.user.id,
+          userId: request.user.id,
           weightInGrams: request.body.weightInGrams,
           heightInCentimeters: request.body.heightInCentimeters,
           age: request.body.age,

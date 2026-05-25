@@ -8,6 +8,7 @@ backend/.env
 backend/.env.*
 backend/.pnpm-store/
 backend/src/generated/prisma/
+frontend/app/_generated/prisma/
 backend/dist/
 backend/.codex/
 backend/.serena/
@@ -16,4 +17,11 @@ backend/task/
 backend/docs/
 backend/AGENTS.md
 backend/Agentes.md
+frontend/.codex/
+frontend/.serena/
+frontend/.mcp.json
+frontend/CODEX.md
+frontend/.next-dev.*.log
 .obsidian/
+
+.serena/

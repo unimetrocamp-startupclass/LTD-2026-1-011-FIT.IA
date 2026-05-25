@@ -1,20 +1,31 @@
-import { cookies } from "next/headers";
+import { headers } from "next/headers";
+
+import { getAccessToken } from "./token-storage";
 
 const getBody = <T>(c: Response | Request): Promise<T> => {
   return c.json() as Promise<T>;
 };
 
 const getUrl = (contextUrl: string): string => {
-  const newUrl = new URL(`${process.env.NEXT_PUBLIC_API_URL}${contextUrl}`);
+  const apiUrl = process.env.SERVER_API_URL ?? process.env.NEXT_PUBLIC_API_URL;
+
+  if (!apiUrl) {
+    throw new Error("SERVER_API_URL or NEXT_PUBLIC_API_URL is required");
+  }
+
+  const newUrl = new URL(`${apiUrl}${contextUrl}`);
   const requestUrl = new URL(`${newUrl}`);
   return requestUrl.toString();
 };
 
-const getHeaders = async (headers?: HeadersInit): Promise<HeadersInit> => {
-  const _cookies = await cookies();
+const getHeaders = async (headersInit?: HeadersInit): Promise<HeadersInit> => {
+  const token = await getAccessToken({
+    headers: await headers(),
+  });
+
   return {
-    ...headers,
-    cookie: _cookies.toString(),
+    ...headersInit,
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
   };
 };
 
@@ -28,7 +39,6 @@ export const customFetch = async <T>(
   const requestInit: RequestInit = {
     ...options,
     headers: requestHeaders,
-    credentials: "include",
     cache: options.cache ?? "no-store",
   };
 

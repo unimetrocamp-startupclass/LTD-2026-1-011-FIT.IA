@@ -8,13 +8,12 @@ import {
   tool,
   UIMessage,
 } from "ai";
-import { fromNodeHeaders } from "better-auth/node";
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
 import z from "zod";
 
 import { ValidationError } from "../erros/index.js";
-import { auth } from "../lib/auth.js";
+import { authenticate } from "../middleware/authenticate.js";
 import {
   UserTrainDataBodySchema,
   WorkoutDayInputSchema,
@@ -135,16 +134,9 @@ export const aiRoutes = async (app: FastifyInstance) => {
       tags: ["AI"],
       summary: "Chat with AI personal trainer",
     },
+    preHandler: authenticate,
     handler: async (request, reply) => {
-      const session = await auth.api.getSession({
-        headers: fromNodeHeaders(request.headers),
-      });
-
-      if (!session) {
-        return reply.status(401).send({ error: "Unauthorized" });
-      }
-
-      const userId = session.user.id;
+      const userId = request.user.id;
       const { messages } = request.body as { messages: UIMessage[] };
       const result = streamText({
         model: google("gemini-2.5-flash"),
