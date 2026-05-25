@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
+import { getAccessToken } from "@/app/_lib/token-storage";
 
 const SUGGESTED_MESSAGES = ["Monte meu plano de treino"];
 const CHAT_QUOTA_ERROR_MESSAGE =
@@ -58,7 +59,19 @@ export function Chat({ embedded = false, initialMessage }: ChatProps) {
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: `${process.env.NEXT_PUBLIC_API_URL}/ai`,
-      credentials: "include",
+      fetch: async (input, init) => {
+        const token = await getAccessToken();
+        const headers = new Headers(init?.headers);
+
+        if (token) {
+          headers.set("Authorization", `Bearer ${token}`);
+        }
+
+        return fetch(input, {
+          ...init,
+          headers,
+        });
+      },
     }),
     onError: (error) => {
       setChatError(getChatErrorMessage(error));

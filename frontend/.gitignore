@@ -29,9 +29,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files
+.env
+.env.*
+!.env.example
+
+# agent/local tooling
+.codex/
+.serena/
+.mcp.json
+CODEX.md
 
 # vercel
 .vercel

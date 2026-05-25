@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+build
+.env*
+*.log
+*.tsbuildinfo
+.codex
+.serena
+.mcp.json
+CODEX.md

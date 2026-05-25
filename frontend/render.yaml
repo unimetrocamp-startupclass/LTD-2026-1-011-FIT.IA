@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: fitia
+    runtime: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    plan: free
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_BASE_URL
+        value: https://fitia.onrender.com
+      - key: NEXT_PUBLIC_API_URL
+        value: https://fitia-api-u7u9.onrender.com
+      - key: SERVER_API_URL
+        value: https://fitia-api-u7u9.onrender.com
+      - key: DATABASE_URL
+        sync: false
+      - key: BETTER_AUTH_SECRET
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
