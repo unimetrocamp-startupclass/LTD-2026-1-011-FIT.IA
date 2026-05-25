@@ -11,11 +11,11 @@ services:
       - key: NODE_ENV
         value: production
       - key: NEXT_PUBLIC_BASE_URL
-        value: https://fitia.onrender.com
+        value: false
       - key: NEXT_PUBLIC_API_URL
-        value: https://fitia-api-u7u9.onrender.com
+        value: false
       - key: SERVER_API_URL
-        value: https://fitia-api-u7u9.onrender.com
+        value: false
       - key: DATABASE_URL
         sync: false
       - key: BETTER_AUTH_SECRET
